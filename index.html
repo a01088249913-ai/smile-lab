@@ -293,6 +293,10 @@ td.t{max-width:180px;overflow:hidden;text-overflow:ellipsis}
         <div class="wlist" id="gcats"><span class="small">Giphy&#xB97C; &#xC5F0;&#xACB0;&#xD558;&#xBA74; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</span></div>
       </div>
       <div>
+        <h2>&#xD6A8;&#xACFC;&#xC74C; &#xD6A8;&#xACFC; (&#xC6C0;&#xC9E4; &#xB7; &#xD3C9;&#xADE0; &#xC6C3;&#xC74C;)</h2>
+        <div class="wlist" id="sfxs"><span class="small">&#xC6C0;&#xC9E4;&#xC744; &#xBA87; &#xAC1C; &#xBCF4;&#xBA74; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</span></div>
+      </div>
+      <div>
         <h2>&#xCD5C;&#xADFC; &#xBCF4;&#xC0C1;</h2>
         <div class="hist" id="hist"></div>
       </div>
@@ -545,7 +549,33 @@ function tone(f,t0,d,type,g){const a=ac();if(!a)return;const t=a.currentTime+t0,
 function hiss(t0,d,g){const a=ac();if(!a)return;const t=a.currentTime+t0,buf=a.createBuffer(1,Math.floor(a.sampleRate*d),a.sampleRate),ch=buf.getChannelData(0);
   for(let i=0;i<ch.length;i++)ch[i]=Math.random()*2-1;const s=a.createBufferSource(),hp=a.createBiquadFilter(),v=a.createGain();s.buffer=buf;hp.type='highpass';hp.frequency.value=6000;
   v.gain.setValueAtTime(g,t);v.gain.exponentialRampToValueAtTime(0.001,t+d);s.connect(hp).connect(v).connect(a.destination);s.start(t)}
-function rimshot(){if(!soundOn)return;tone(190,0,0.12,'triangle',0.5);tone(160,0.17,0.12,'triangle',0.5);hiss(0.34,0.7,0.3)}
+function rimRaw(t0=0){tone(190,t0,0.12,'triangle',0.5);tone(160,t0+0.17,0.12,'triangle',0.5);hiss(t0+0.34,0.7,0.3)}
+function rimshot(){if(!soundOn)return;rimRaw()}
+// ---------- \u{B9CC}\u{D654} \u{D6A8}\u{ACFC}\u{C74C} \u{D569}\u{C131} (\u{D30C}\u{C77C} \u{C5C6}\u{C774} WebAudio\u{B85C} \u{C9C1}\u{C811} \u{B9CC}\u{B4E6}) ----------
+function osc({type='sine',f0,f1,t0=0,d,g=0.3,lp,vib}){const a=ac();if(!a)return;const t=a.currentTime+t0,o=a.createOscillator(),v=a.createGain();
+  o.type=type;o.frequency.setValueAtTime(f0,t);if(f1)o.frequency.exponentialRampToValueAtTime(f1,t+d);
+  let node=o;if(lp){const f=a.createBiquadFilter();f.type='lowpass';f.frequency.value=lp;o.connect(f);node=f}
+  if(vib){const l=a.createOscillator(),lg=a.createGain();l.frequency.value=vib[0];lg.gain.value=vib[1];l.connect(lg).connect(o.frequency);l.start(t);l.stop(t+d+0.05)}
+  v.gain.setValueAtTime(0.0001,t);v.gain.exponentialRampToValueAtTime(g,t+0.02);v.gain.setValueAtTime(g,t+Math.max(0.03,d-0.08));v.gain.exponentialRampToValueAtTime(0.0001,t+d);
+  node.connect(v).connect(a.destination);o.start(t);o.stop(t+d+0.05)}
+function noiz({t0=0,d,g=0.3,f0,f1,q=1}){const a=ac();if(!a)return;const t=a.currentTime+t0,buf=a.createBuffer(1,Math.floor(a.sampleRate*d),a.sampleRate),ch=buf.getChannelData(0);
+  for(let i=0;i<ch.length;i++)ch[i]=Math.random()*2-1;const sN=a.createBufferSource(),f=a.createBiquadFilter(),v=a.createGain();sN.buffer=buf;
+  f.type='bandpass';f.Q.value=q;f.frequency.setValueAtTime(f0,t);if(f1)f.frequency.exponentialRampToValueAtTime(f1,t+d);
+  v.gain.setValueAtTime(g,t);v.gain.exponentialRampToValueAtTime(0.0001,t+d);sN.connect(f).connect(v).connect(a.destination);sN.start(t)}
+function sBonk(t0=0){osc({type:'triangle',f0:170,f1:55,t0,d:0.22,g:0.6});noiz({t0,d:0.08,g:0.4,f0:900,q:0.8})}
+function sTrombone(t0=0){[[293.66,.32],[277.18,.32],[261.63,.32],[246.94,1.1]].reduce((t,[f,d],i)=>{osc({type:'sawtooth',f0:f,t0:t,d,g:0.18,lp:1100,vib:i===3?[6,7]:null});return t+d+0.03},t0)}
+function sBoing(t0=0){osc({type:'sine',f0:150,f1:430,t0,d:0.55,g:0.4,vib:[14,45]})}
+function sSlide(t0=0){osc({type:'sine',f0:500,f1:1700,t0,d:0.35,g:0.25,vib:[6,12]});osc({type:'sine',f0:1700,f1:380,t0:t0+0.36,d:0.5,g:0.25,vib:[6,12]})}
+function sScratch(t0=0){noiz({t0,d:0.13,g:0.5,f0:2600,f1:600,q:4});noiz({t0:t0+0.13,d:0.14,g:0.45,f0:600,f1:2300,q:4})}
+const SFXS={none:{n:'\u{D6A8}\u{ACFC}\u{C74C} \u{C5C6}\u{C74C}',play:()=>{}},bonk:{n:'\u{AF5D} + \u{BE60}\u{BC14}\u{BC24}',play:()=>{sBonk();sTrombone(0.35)}},boing:{n:'\u{B760}\u{C6A9}',play:()=>sBoing()},
+  slide:{n:'\u{D718}\u{D30C}\u{B78C} \u{C2AC}\u{B77C}\u{C774}\u{B4DC}',play:()=>sSlide()},scratch:{n:'\u{B808}\u{CF54}\u{B4DC} \u{B07C}\u{C775}',play:()=>sScratch()},rim:{n:'\u{BC14}\u{B460}\u{CE20}',play:()=>rimRaw()}};
+const CAT_SFX={animalfail:['bonk','boing','slide'],cat:['boing','slide','scratch'],dog:['boing','slide'],baby:['boing','slide'],fail:['bonk','scratch'],
+  face:['scratch','rim','boing'],dance:['scratch','rim'],sport:['bonk','scratch'],weird:['boing','slide','scratch'],life:['bonk','rim','scratch']};
+let sfxStats={};
+function loadSfx(){try{sfxStats=JSON.parse(localStorage.getItem('smile-lab-sfx')||'{}')}catch(e){}}
+function saveSfx(){try{localStorage.setItem('smile-lab-sfx',JSON.stringify(sfxStats))}catch(e){}}
+function chooseSfx(cat){const opts=[...(CAT_SFX[cat]||['boing']),'none'];let best='none',bv=-1;   // \u{D6A8}\u{ACFC}\u{C74C} \u{C5C6}\u{C74C}\u{B3C4} \u{D6C4}\u{BCF4}\u{C5D0} \u{B123}\u{C5B4} \u{D6A8}\u{ACFC}\u{B97C} \u{BE44}\u{AD50}
+  for(const k of opts){const s=sfxStats[k]||{n:0,sum:0},m=(1+s.sum)/(2+s.n),sd=Math.sqrt(m*(1-m)/(3+s.n)),v=m+randn()*sd;if(v>bv){bv=v;best=k}}return best}
 function ding(){if(!soundOn)return;tone(880,0,0.18,'sine',0.25);tone(1320,0.1,0.3,'sine',0.25)}
 // \u{AC74}\u{B108}\u{B6F4} \u{B77C}\u{C6B4}\u{B4DC}\u{B3C4} '\u{BCF8} \u{CE74}\u{B4DC}'\u{B85C} \u{AE30}\u{B85D}\u{D574}\u{C11C} \u{BC14}\u{B85C} \u{B2E4}\u{C2DC} \u{B098}\u{C624}\u{C9C0} \u{C54A}\u{AC8C} \u{D568}
 function markSeen(c){c._skip=Date.now()}
@@ -713,7 +743,8 @@ async function round(){
   showCard(c);cover.hidden=true;
   if(c.type==='gif'){c.vid.play().catch(()=>{});
     if(!await waitGif(c)){gSeen.add(c.gid);saveG();$('phase').textContent='\u{C6C0}\u{C9E4}\u{C744} \u{BD88}\u{B7EC}\u{C624}\u{C9C0} \u{BABB}\u{D574} \u{AC74}\u{B108}\u{B700}';busy=false;if(running)setTimeout(round,800);return}
-    c.vid.play().catch(()=>{});}
+    c.vid.play().catch(()=>{});
+    if(soundOn){c.sfx=chooseSfx(c.cat);if(c.sfx!=='none'){const k=c.sfx;setTimeout(()=>{if(soundOn)SFXS[k].play()},900+Math.random()*700);$('tag').textContent+=' \u{B7} \u{1F50A} '+SFXS[k].n}}}
   if(c.type==='skit'){$('phase').textContent='\u{2461} \u{C0C1}\u{D669}\u{ADF9} \u{C9C4}\u{D589} \u{C911}\u{2026}';await playSkit(c)}
   if(c.type==='pun'){$('phase').textContent='\u{2461} \u{BB38}\u{C81C} \u{C77D}\u{B294} \u{C911}\u{2026}';await sleep(1800);const a=document.getElementById('ans');if(a)a.classList.add('on');const bm=document.createElement('div');bm.className='boom';bm.textContent=pick(SFX);$('content').appendChild(bm);shake();rimshot()}
   let r;
@@ -846,7 +877,7 @@ function nextGif(){
   for(const k of order){const q=gQ[k];while(q&&q.length){const c=q.shift();if(!gSeen.has(c.gid))return c}}
   return null;
 }
-function gLearn(c,r){gSeen.add(c.gid);const s=gStats[c.cat]||(gStats[c.cat]={n:0,sum:0});s.n++;s.sum+=r;
+function gLearn(c,r){gSeen.add(c.gid);if(c.sfx){const t=sfxStats[c.sfx]||(sfxStats[c.sfx]={n:0,sum:0});t.n++;t.sum+=r;saveSfx()}const s=gStats[c.cat]||(gStats[c.cat]={n:0,sum:0});s.n++;s.sum+=r;
   if(r>=0.5&&!c.encore&&!gHof.some(h=>h.gid===c.gid))gHof.push({gid:c.gid,cat:c.cat,mp4:c.mp4,src:c.src,user:c.user,at:history.length,n:0});saveG();gEnsure()}
 function prepGif(c){const v=document.createElement('video');v.className='gifv';v.src=c.mp4;v.muted=true;v.loop=true;v.playsInline=true;v.setAttribute('playsinline','');v.preload='auto';v.load();c.vid=v}
 function waitGif(c){return new Promise(res=>{const v=c.vid;if(v.readyState>=3)return res(true);const t=setTimeout(()=>res(v.readyState>=2),5000);
@@ -864,7 +895,10 @@ function gInit(){
   loadG();if(!gKey&&DEFAULT_GKEY){gKey=DEFAULT_GKEY}
   if(gKey){gOn=true;gUI();gStatus('\u{C5F0}\u{ACB0}\u{B428} \u{B7} \u{C6C0}\u{C9E4} \u{BD88}\u{B7EC}\u{C624}\u{B294} \u{C911}\u{2026}');gEnsure()}else gUI();
 }
-function renderG(){const el=$('gcats');if(!el||!gOn)return;
+function renderSfx(){const el=$('sfxs');if(!el)return;const rows=Object.keys(SFXS).map(k=>{const s=sfxStats[k]||{n:0,sum:0};return {k,n:s.n,m:s.n?s.sum/s.n:null}}).filter(x=>x.n);
+  if(!rows.length)return;rows.sort((a,z)=>z.m-a.m);
+  el.innerHTML=rows.map(({k,n,m})=>`<div class="w"><span>${SFXS[k].n}</span><div class="track"><div class="fill" style="left:0;width:${m*100}%;background:var(${k==='none'?'--muted':'--pos'})"></div></div><span class="num">${m.toFixed(2)} \u{B7} ${n}</span></div>`).join('')}
+function renderG(){renderSfx();const el=$('gcats');if(!el||!gOn)return;
   const rows=Object.keys(GCAT).map(k=>{const s=gStats[k]||{n:0,sum:0};return {k,n:s.n,m:s.n?s.sum/s.n:null}}).sort((a,z)=>(z.m??-1)-(a.m??-1));
   el.innerHTML=rows.map(({k,n,m})=>`<div class="w"><span>${GCAT[k].n}</span><div class="track"><div class="fill" style="left:0;width:${m==null?0:m*100}%;background:var(--pos)"></div></div><span class="num">${m==null?'\u{2013}':m.toFixed(2)} \u{B7} ${n}</span></div>`).join('')}
 
@@ -872,7 +906,7 @@ function renderG(){const el=$('gcats');if(!el||!gOn)return;
 $('soundBtn').addEventListener('click',e=>{soundOn=!soundOn;e.currentTarget.textContent=soundOn?'\u{D6A8}\u{ACFC}\u{C74C} \u{CF1C}\u{C9D0}':'\u{D6A8}\u{ACFC}\u{C74C} \u{AEBC}\u{C9D0}';e.currentTarget.setAttribute('aria-pressed',soundOn);if(soundOn)ac()});
 $('startBtn').addEventListener('click',()=>{if(soundOn)ac();aiInit();running=!running;$('startBtn').textContent=running?'\u{C77C}\u{C2DC}\u{C815}\u{C9C0}':'\u{C2DC}\u{C791}';if(running)round()});
 $('camBtn').addEventListener('click',startCam);
-$('resetBtn').addEventListener('click',()=>{fresh();gStats={};saveG();renderG();seenGen=new Set();saveGen();fxStats={};saveFx();save();renderLab()});
+$('resetBtn').addEventListener('click',()=>{fresh();gStats={};sfxStats={};saveSfx();saveG();renderG();seenGen=new Set();saveGen();fxStats={};saveFx();save();renderLab()});
 $('upload').addEventListener('change',e=>{const fs=[...e.target.files];e.target.value='';addPhotos(fs)});
 
 $('gSave').addEventListener('click',gConnect);
@@ -892,6 +926,7 @@ gInit();
     if(!running){running=true;$('startBtn').textContent='\u{C77C}\u{C2DC}\u{C815}\u{C9C0}';round()}};
   $('introGo').onclick=()=>go(true);$('introNoCam').onclick=()=>go(false);
 })();
+loadSfx();
 load();loadAI();loadPhotos();loadGen();loadHof();loadFx();loadLaughs();renderScore(false);renderLab();renderG();
 try{if(matchMedia('(min-width:821px)').matches)$('labBox').open=true}catch(e){}
 </script>
