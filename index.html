@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="ko" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="google" content="notranslate">
+<script>window.SMILE_DIST=true;window.SMILE_GKEY='QRR4fNOuZBG1ZMe0m9pRXRZdaRRYCQYT';</script>
+</head>
+<body>
+<title>&#xC6C3;&#xC74C; &#xC2E4;&#xD5D8;&#xC2E4;</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Layout: \B9CC \D654  \CEF7  \AC19 \C740  \BB34 \B300 (\AD75 \C740  \D14C \B450 \B9AC \B7 \B9DD \C810 \B7 \B9D0 \D48D \C120  \B9C8 \C2A4 \CF54 \D2B8 )\AC00  \C67C \CABD , \D559 \C2B5  \D310 \B3C5 \AE30 \AC00  \C624 \B978 \CABD . \D3F0 \C5D0 \C11C \B294  \D55C  \C904  */
+:root{
+  --bg:#FFF4C9; --surface:#FFFFFF; --ink:#16131F; --muted:#5B5566; --line:#E6D9A3; --dot:#F6D86B;
+  --accent:#FF4F8B; --accent-ink:#FFFFFF; --pop:#2E9BFF; --sun:#FFD23F;
+  --pos:#1F9D6B; --neg:#D2475A; --cover:#16131F;
+  --display:"Jua","Gowun Dodum",system-ui,sans-serif;
+  --sfx:"Black Han Sans","Jua",Impact,system-ui,sans-serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1C1830; --surface:#29233F; --ink:#FFF6DC; --muted:#BDB4D3; --line:#3E3660; --dot:#3A3258;
+  --accent:#FF6A9E; --accent-ink:#1C1830; --pop:#59B2FF; --sun:#FFD23F;
+  --pos:#4CCB97; --neg:#F27A8A; --cover:#0E0B1A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1C1830; --surface:#29233F; --ink:#FFF6DC; --muted:#BDB4D3; --line:#3E3660; --dot:#3A3258;
+  --accent:#FF6A9E; --accent-ink:#1C1830; --pop:#59B2FF; --sun:#FFD23F;
+  --pos:#4CCB97; --neg:#F27A8A; --cover:#0E0B1A; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  background-image:radial-gradient(circle,var(--dot) 1.3px,transparent 1.8px);background-size:16px 16px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px}
+h1{font-family:var(--sfx);font-weight:400;font-size:clamp(32px,6vw,48px);margin:0;letter-spacing:.01em;text-wrap:balance;
+  text-shadow:3px 3px 0 var(--sun);transform:rotate(-2deg)}
+h1 span{background:var(--accent);color:var(--accent-ink);padding:0 .25em;border:3px solid var(--ink);border-radius:8px;display:inline-block;transform:rotate(3deg);text-shadow:none}
+.sub{color:var(--muted);margin:0;max-width:60ch}
+.grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+.stage{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{position:relative;background:var(--surface);border:3px solid var(--ink);border-radius:6px;box-shadow:7px 7px 0 var(--ink);
+  aspect-ratio:4/3;max-width:100%;overflow:hidden;display:grid;place-items:center;padding:28px;text-align:center;
+  background-image:radial-gradient(circle,var(--dot) 1.4px,transparent 1.9px);background-size:13px 13px}
+.card.shake{animation:shake .45s}
+@keyframes shake{20%{transform:translate(-6px,3px) rotate(-1deg)}40%{transform:translate(5px,-4px) rotate(1deg)}60%{transform:translate(-4px,2px)}80%{transform:translate(3px,-1px)}}
+.card .emoji{font-size:clamp(64px,14vw,112px);line-height:1;display:inline-block}
+.card .q{font-family:var(--display);font-size:clamp(24px,4.6vw,38px);line-height:1.3;text-wrap:balance;
+  background:var(--surface);border:3px solid var(--ink);border-radius:20px;padding:10px 18px;position:relative;display:inline-block}
+.card .q::after{content:"";position:absolute;left:28%;bottom:-16px;border:9px solid transparent;border-top:14px solid var(--ink)}
+.card .a{font-family:var(--sfx);font-size:clamp(44px,10vw,80px);margin-top:22px;
+  background:var(--sun);color:#16131F;display:inline-block;padding:0 .3em;border:3px solid var(--ink);border-radius:6px;box-shadow:5px 5px 0 var(--ink);
+  transform:scale(.3) rotate(-20deg);opacity:0;transition:transform .4s cubic-bezier(.3,1.9,.5,1),opacity .15s}
+.card .a.on{transform:rotate(-4deg);opacity:1}
+.card .cap{font-size:clamp(17px,2.8vw,22px);font-weight:600;margin-top:16px;max-width:30ch;text-wrap:balance;
+  background:var(--surface);border:2px solid var(--ink);padding:6px 12px;border-radius:4px}
+.card img.photo{max-width:100%;max-height:100%;object-fit:contain;border:3px solid var(--ink);border-radius:4px;transform:rotate(-2deg)}
+.card canvas.mirror{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card .mcap{position:absolute;left:50%;bottom:14px;transform:translateX(-50%) rotate(-2deg);font-family:var(--sfx);font-size:clamp(18px,3.4vw,26px);
+  background:var(--sun);color:#16131F;border:3px solid var(--ink);padding:2px 12px;white-space:nowrap}
+.boom{position:absolute;right:6%;top:8%;width:clamp(90px,22%,150px);aspect-ratio:1;display:grid;place-items:center;
+  background:var(--accent);color:var(--accent-ink);font-family:var(--sfx);font-size:clamp(20px,4vw,32px);
+  clip-path:polygon(50% 0,61% 30%,95% 18%,72% 45%,100% 62%,66% 66%,72% 100%,50% 76%,26% 98%,32% 66%,0 60%,28% 44%,6% 16%,40% 30%);
+  transform:scale(0) rotate(-30deg);animation:boom .5s .05s cubic-bezier(.3,1.9,.5,1) forwards}
+@keyframes boom{to{transform:scale(1) rotate(8deg)}}
+.cover{position:absolute;inset:0;background:var(--cover);color:#FFF6DC;display:grid;place-items:center;
+  font-family:var(--display);font-size:22px;transition:opacity .25s}
+.cover[hidden]{display:none!important}
+.tag{position:absolute;left:12px;top:10px;font-family:var(--sfx);font-size:13px;letter-spacing:.04em;
+  background:var(--ink);color:var(--bg);padding:2px 10px;transform:rotate(-3deg);z-index:2}
+/* \CE74 \B4DC \BCC4  \B3D9 \C791  */
+.an-wobble{animation:wobble 1.2s ease-in-out infinite}
+.an-bounce{animation:bounce .7s cubic-bezier(.3,0,.5,1) infinite alternate}
+.an-spin{animation:spin 1.6s linear infinite}
+.an-jitter{animation:jitter .12s steps(2) infinite}
+.an-crawl{animation:crawl 6s linear infinite}
+.an-fall{animation:fall 1.8s cubic-bezier(.5,0,1,.6) infinite}
+.an-zoom{animation:zoom .9s ease-in-out infinite alternate}
+.an-sneak{animation:sneak 2.4s ease-in-out infinite}
+@keyframes wobble{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(12deg)}}
+@keyframes bounce{from{transform:translateY(0) scaleY(.9)}to{transform:translateY(-28px) scaleY(1.05)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes jitter{0%{transform:translate(-3px,1px) rotate(-3deg)}100%{transform:translate(3px,-1px) rotate(3deg)}}
+@keyframes crawl{0%{transform:translateX(-120px) scaleX(-1)}100%{transform:translateX(120px) scaleX(-1)}}
+@keyframes fall{0%{transform:translateY(-30px) rotate(0)}70%{transform:translateY(40px) rotate(160deg)}100%{transform:translateY(40px) rotate(180deg);opacity:0}}
+@keyframes zoom{from{transform:scale(.85)}to{transform:scale(1.15)}}
+@keyframes sneak{0%,100%{transform:translateX(0)}40%{transform:translateX(-40px) rotate(-8deg)}60%{transform:translateX(30px) rotate(6deg)}}
+.card.tall{aspect-ratio:auto;min-height:min(78vw,440px);padding:44px 20px 24px}
+.skit{display:flex;flex-direction:column;gap:9px;width:100%;max-width:540px;text-align:left}
+.skit .ttl{font-family:var(--sfx);font-size:clamp(15px,2.8vw,18px);text-align:center;margin-bottom:4px}
+.skit .ttl .em{font-size:1.6em;display:block;line-height:1.2}
+.ln{display:flex;gap:8px;align-items:flex-end;opacity:0;transform:translateY(10px);transition:opacity .25s,transform .3s cubic-bezier(.3,1.6,.5,1)}
+.ln.on{opacity:1;transform:none}
+.ln.r{flex-direction:row-reverse}
+.ln .who{font:13px var(--sfx);background:var(--ink);color:var(--bg);padding:2px 8px;border-radius:3px;flex:none;margin-bottom:4px}
+.ln .bub{background:var(--surface);border:2px solid var(--ink);border-radius:14px;padding:6px 12px;font-family:var(--display);
+  font-size:clamp(16px,3.4vw,21px);line-height:1.38;min-width:0}
+.ln.punch .bub{background:var(--sun);color:#16131F;font-size:clamp(19px,4.2vw,26px);box-shadow:4px 4px 0 var(--ink);transform:rotate(-1.5deg)}
+.card video.gifv{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#16131F}
+.gsrc{position:absolute;right:8px;bottom:8px;z-index:2;font:600 11px var(--body);color:#FFF6DC;background:rgba(22,19,31,.75);padding:3px 8px;border-radius:4px;text-decoration:none}
+.gbox{background:var(--surface);border:2px solid var(--ink);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.gbox .gh{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.gbox .gh b{font-family:var(--sfx);font-weight:400;font-size:16px}
+.grow{display:flex;gap:8px;flex-wrap:wrap}
+.grow input{flex:1 1 180px;min-width:0;font:14px var(--mono);padding:8px 10px;border:2px solid var(--ink);border-radius:8px;background:var(--bg);color:var(--ink)}
+.grow input:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+.intro{position:fixed;inset:0;z-index:50;background:var(--bg);overflow-y:auto;
+  background-image:radial-gradient(circle,var(--dot) 1.3px,transparent 1.8px);background-size:16px 16px;
+  padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.intro .box{max-width:460px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.intro h2{font-family:var(--sfx);font-weight:400;font-size:clamp(34px,9vw,46px);margin:0;transform:rotate(-2deg);text-shadow:3px 3px 0 var(--sun)}
+.intro ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.intro li{display:flex;gap:10px;align-items:center;background:var(--surface);border:2px solid var(--ink);border-radius:8px;padding:10px 12px;font-size:16px}
+.intro li b{font-family:var(--sfx);font-weight:400;font-size:20px;background:var(--sun);color:#16131F;border:2px solid var(--ink);width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:50%}
+.intro .priv{font-size:14px;color:var(--muted);background:var(--surface);border:2px dashed var(--ink);border-radius:8px;padding:10px 12px}
+.intro .go{font-size:20px;padding:14px 18px}
+.inapp{background:var(--sun);color:#16131F;border:2px solid var(--ink);border-radius:8px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-weight:600}
+.lolfx{position:absolute;top:-40px;font-size:30px;pointer-events:none;animation:drop 1.6s ease-in forwards;z-index:3}
+@keyframes drop{to{transform:translateY(130vh) rotate(540deg)}}
+
+/* \B9C8 \C2A4 \CF54 \D2B8  */
+.mascot{display:flex;align-items:center;gap:10px;min-width:0}
+.face{width:58px;height:58px;flex:none;border-radius:50%;background:var(--sun);border:3px solid var(--ink);position:relative;transition:transform .2s}
+.face .eye{position:absolute;top:18px;width:9px;height:11px;background:#16131F;border-radius:50%}
+.face .eye.l{left:15px}.face .eye.r{right:15px}
+.face .mouth{position:absolute;left:50%;top:34px;width:18px;height:4px;background:#16131F;border-radius:3px;transform:translateX(-50%);transition:all .2s}
+.face .drop{position:absolute;right:-4px;top:4px;width:10px;height:14px;background:var(--pop);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;opacity:0}
+.face[data-mood="grin"] .mouth{width:26px;height:12px;top:32px;background:transparent;border:3px solid #16131F;border-top:0;border-radius:0 0 16px 16px}
+.face[data-mood="lol"]{animation:jitter .1s steps(2) infinite}
+.face[data-mood="lol"] .mouth{width:30px;height:18px;top:30px;background:#16131F;border-radius:4px 4px 18px 18px}
+.face[data-mood="lol"] .eye{height:4px;top:21px;border-radius:0;background:transparent;border-top:3px solid #16131F;border-radius:50% 50% 0 0;width:12px}
+.face[data-mood="sad"] .mouth{width:20px;height:8px;top:36px;background:transparent;border:3px solid #16131F;border-bottom:0;border-radius:12px 12px 0 0}
+.face[data-mood="sad"] .drop{opacity:1;animation:sweat 1s ease-in infinite}
+@keyframes sweat{from{transform:translateY(0)}to{transform:translateY(10px);opacity:.3}}
+.say{position:relative;background:var(--surface);border:3px solid var(--ink);border-radius:14px;padding:6px 12px;font-family:var(--display);font-size:17px;line-height:1.3;min-width:0}
+.say::before{content:"";position:absolute;left:-12px;top:50%;margin-top:-7px;border:7px solid transparent;border-right:9px solid var(--ink)}
+.say:empty{display:none}
+@media (prefers-reduced-motion:reduce){[class*="an-"],.face,.card.shake,.lolfx{animation:none!important}}
+
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button,.file{font:600 14px var(--body);border-radius:8px;border:2px solid var(--ink);background:var(--surface);
+  color:var(--ink);padding:8px 14px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .08s,box-shadow .08s}
+button:active,.file:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+button:focus-visible,.file:focus-within{outline:3px solid var(--accent);outline-offset:2px}
+button.primary{background:var(--accent);color:var(--accent-ink);font-family:var(--sfx);font-weight:400;font-size:17px;letter-spacing:.03em}
+button:disabled{opacity:.45;cursor:not-allowed}
+.file input{position:absolute;width:1px;height:1px;opacity:0}
+.file{position:relative}
+
+.cam{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;align-items:center;
+  background:var(--surface);border:2px solid var(--ink);border-radius:8px;padding:10px}
+.cam video{width:120px;aspect-ratio:4/3;max-width:100%;border-radius:10px;background:var(--cover);object-fit:cover;transform:scaleX(-1)}
+.meter{height:12px;border-radius:6px;background:var(--line);overflow:hidden;margin:6px 0 4px}
+.meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .08s linear}
+.phase{font-weight:600}
+.small{font-size:13px;color:var(--muted)}
+.manual{display:flex;gap:8px;flex-wrap:wrap}
+.manual button{font-size:15px}
+
+.lab{background:var(--surface);border:2px solid var(--ink);border-radius:8px;padding:14px 18px;min-width:0}
+.lab summary{cursor:pointer;font-weight:600;padding:4px 0}
+.labIn{display:flex;flex-direction:column;gap:18px;padding-top:14px}
+.score{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px}
+.big{display:flex;align-items:baseline;gap:8px}
+.big b{font-family:var(--sfx);color:var(--accent);-webkit-text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--ink);font-weight:400;font-size:clamp(44px,10vw,64px);line-height:1;font-variant-numeric:tabular-nums}
+.big span{color:var(--muted)}
+.big b.pop{animation:pop .5s cubic-bezier(.3,1.8,.5,1)}
+@keyframes pop{0%{transform:scale(1.5)}100%{transform:none}}
+.streak{font-family:var(--sfx);color:#16131F;background:var(--sun);border:2px solid var(--ink);padding:2px 12px;transform:rotate(3deg)}
+.streak:empty{display:none}
+.flash{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  background:color-mix(in srgb,var(--accent) 88%,transparent);color:var(--accent-ink);font-family:var(--sfx);font-size:clamp(32px,7vw,54px);text-shadow:3px 3px 0 var(--ink);animation:fl 1.6s ease forwards;z-index:4}
+.flash img{width:38%;max-width:200px;border:5px solid var(--surface);box-shadow:5px 5px 0 var(--ink);transform:rotate(-5deg)}
+.flash img:not([src]){display:none}
+@keyframes fl{0%{opacity:0;transform:scale(.9)}12%{opacity:1;transform:none}80%{opacity:1}100%{opacity:0}}
+.snaps{display:flex;gap:6px;overflow-x:auto;min-height:0}
+.snaps img{width:56px;height:56px;object-fit:cover;border-radius:4px;flex:none;border:2px solid var(--ink);transform:rotate(-3deg)}
+.snaps img:nth-child(even){transform:rotate(3deg)}
+.lab h2{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.stat b{display:block;font:500 22px var(--mono);font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.w{display:grid;grid-template-columns:76px minmax(0,1fr) 46px;gap:8px;align-items:center;font-size:13px}
+.w .track{position:relative;height:10px;background:var(--bg);border-radius:5px}
+.w .track::after{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:var(--line)}
+.w .fill{position:absolute;top:0;bottom:0;border-radius:5px}
+.w .num{font:500 12px var(--mono);text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.wlist{display:flex;flex-direction:column;gap:6px}
+.hist{display:flex;align-items:flex-end;gap:3px;height:48px;border-bottom:1px solid var(--line)}
+.hist i{flex:1;max-width:18px;background:var(--accent);border-radius:3px 3px 0 0;min-height:2px}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:6px 4px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font:500 11px var(--mono);color:var(--muted);letter-spacing:.04em}
+td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+td.t{max-width:180px;overflow:hidden;text-overflow:ellipsis}
+.note{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="intro" id="intro" hidden>
+  <div class="box">
+    <h2>&#xC6C3;&#xC74C; &#xC2E4;&#xD5D8;&#xC2E4;</h2>
+    <p style="margin:0;font-size:16px">AI&#xAC00; &#xB2F9;&#xC2E0;&#xC744; &#xC6C3;&#xAE30;&#xB824;&#xACE0; &#xC560;&#xC4F0;&#xB294; &#xC571;&#xC774;&#xC5D0;&#xC694;. &#xC6C3;&#xC744;&#xC218;&#xB85D; &#xB2F9;&#xC2E0; &#xCDE8;&#xD5A5;&#xC744; &#xBC30;&#xC6CC;&#xC11C; &#xC810;&#xC810; &#xB354; &#xC6C3;&#xAE34; &#xAC78; &#xBCF4;&#xC5EC;&#xC918;&#xC694;.</p>
+    <ol>
+      <li><b>1</b>&#xC6C3;&#xAE34; &#xC6C0;&#xC9E4;&#xACFC; &#xCE74;&#xB4DC;&#xAC00; &#xD558;&#xB098;&#xC529; &#xB098;&#xC640;&#xC694;</li>
+      <li><b>2</b>&#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xC6C3;&#xC5C8;&#xB294;&#xC9C0; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC7AC;&#xC694;</li>
+      <li><b>3</b>&#xC798; &#xC6C3;&#xC740; &#xC885;&#xB958;&#xB97C; &#xB2E4;&#xC74C;&#xC5D0; &#xB354; &#xBCF4;&#xC5EC;&#xC918;&#xC694;</li>
+    </ol>
+    <p class="priv">&#xCE74;&#xBA54;&#xB77C; &#xC601;&#xC0C1;&#xC740; &#xC774; &#xD3F0; &#xC548;&#xC5D0;&#xC11C;&#xB9CC; &#xCC98;&#xB9AC;&#xB418;&#xACE0; &#xC5B4;&#xB514;&#xC5D0;&#xB3C4; &#xC800;&#xC7A5;&#xB7;&#xC804;&#xC1A1;&#xB418;&#xC9C0; &#xC54A;&#xC544;&#xC694;. &#xC6C3;&#xB294; &#xC21C;&#xAC04; &#xC0AC;&#xC9C4;&#xB3C4; &#xC774; &#xD3F0;&#xC5D0;&#xB9CC; &#xB0A8;&#xC544;&#xC694;.</p>
+    <button class="primary go" id="introGo">&#xCE74;&#xBA54;&#xB77C; &#xCF1C;&#xACE0; &#xC2DC;&#xC791;</button>
+    <button id="introNoCam">&#xCE74;&#xBA54;&#xB77C; &#xC5C6;&#xC774; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xD560;&#xAC8C;&#xC694;</button>
+  </div>
+</div>
+<div class="wrap">
+  <div class="inapp" id="inapp" hidden><span id="inappTxt">&#xCE74;&#xCE74;&#xC624;&#xD1A1; &#xC548;&#xC5D0;&#xC11C;&#xB294; &#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xC548; &#xB420; &#xC218; &#xC788;&#xC5B4;&#xC694;.</span><button id="inappBtn">&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB85C; &#xC5F4;&#xAE30;</button></div>
+  <header>
+    <h1>&#xC6C3;&#xC74C; <span>&#xC2E4;&#xD5D8;&#xC2E4;</span></h1>
+    <p class="sub">&#xBAA9;&#xD45C;&#xB294; &#xD558;&#xB098;, &#xB2F9;&#xC2E0;&#xC744; &#xC6C3;&#xAE30;&#xB294; &#xAC83;. &#xC6C3;&#xC744;&#xC218;&#xB85D; AI&#xAC00; &#xB2F9;&#xC2E0; &#xCDE8;&#xD5A5;&#xC758; &#xC6C3;&#xC74C; &#xD3EC;&#xC778;&#xD2B8;&#xB97C; &#xB354; &#xC815;&#xD655;&#xD788; &#xCC3E;&#xC544;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
+  </header>
+
+  <div class="grid">
+    <section class="stage">
+      <div class="score">
+        <div class="big"><b id="lCount">0</b><span>&#xBC88; &#xC6C3;&#xC5C8;&#xC5B4;&#xC694; &#xB7; &#xC624;&#xB298;</span></div>
+        <div class="streak" id="streak"></div>
+      </div>
+      <div class="mascot">
+        <div class="face" id="face" data-mood="neutral" aria-hidden="true"><i class="eye l"></i><i class="eye r"></i><i class="mouth"></i><i class="drop"></i></div>
+        <div class="say" id="say">&#xC548;&#xB155;! &#xC624;&#xB298; &#xB108; &#xC6C3;&#xAE30;&#xB7EC; &#xC654;&#xC5B4;. &#xC2DC;&#xC791; &#xB20C;&#xB7EC; &#xBD10;.</div>
+      </div>
+      <div class="card" id="card">
+        <span class="tag" id="tag">&#xB300;&#xAE30;</span>
+        <div id="content"><div class="emoji">&#x1F986;</div><div class="cap">&#xC2DC;&#xC791;&#xC744; &#xB204;&#xB974;&#xBA74; &#xCCAB; &#xCE74;&#xB4DC;&#xAC00; &#xB098;&#xC635;&#xB2C8;&#xB2E4;. &#xCC38;&#xC9C0; &#xB9D0;&#xACE0; &#xC6C3;&#xC73C;&#xC138;&#xC694;.</div></div>
+        <div class="cover" id="cover" hidden>&#xBB34;&#xD45C;&#xC815; &#xC900;&#xBE44;&#x2026;</div>
+        <div class="flash" id="flash" hidden><img id="flashImg" alt=""><span id="flashTxt">&#xD3EC;&#xCC29;!</span></div>
+      </div>
+      <div class="snaps" id="snaps" aria-label="&#xC624;&#xB298; &#xC6C3;&#xC740; &#xC21C;&#xAC04;"></div>
+
+      <div class="bar">
+        <button class="primary" id="startBtn">&#xC2DC;&#xC791;</button>
+        <button id="camBtn">&#xCE74;&#xBA54;&#xB77C; &#xCF1C;&#xAE30;</button>
+        <button id="soundBtn" aria-pressed="true">&#xD6A8;&#xACFC;&#xC74C; &#xCF1C;&#xC9D0;</button>
+        <label class="file">&#xB0B4; &#xC0AC;&#xC9C4; &#xCD94;&#xAC00;<input id="upload" type="file" accept="image/*" multiple></label>
+        <button id="resetBtn">&#xD559;&#xC2B5; &#xCD08;&#xAE30;&#xD654;</button>
+      </div>
+
+      <div class="cam">
+        <video id="video" playsinline muted></video>
+        <div>
+          <div class="phase" id="phase">&#xCE74;&#xBA54;&#xB77C; &#xAEBC;&#xC9D0; &#xB7; &#xC218;&#xB3D9; &#xD3C9;&#xAC00; &#xBAA8;&#xB4DC;</div>
+          <div class="meter"><i id="meter"></i></div>
+          <div class="small" id="camNote">&#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC544;&#xB798; &#xBC84;&#xD2BC;&#xC73C;&#xB85C; &#xBC18;&#xC751;&#xC744; &#xC9C1;&#xC811; &#xACE0;&#xB974;&#xC138;&#xC694;.</div>
+        </div>
+      </div>
+      <div class="gbox" id="gbox">
+        <div class="gh"><b>GIPHY &#xC6C0;&#xC9E4;</b><span class="small" id="gStatus">&#xD0A4;&#xB97C; &#xB123;&#xC73C;&#xBA74; &#xC6C3;&#xAE34; &#xC6C0;&#xC9E4;&#xC744; &#xB9E4;&#xBC88; &#xC0C8;&#xB85C; &#xAC00;&#xC838;&#xC640;&#xC694;.</span></div>
+        <div class="grow" id="gIn"><input id="gKeyIn" type="password" placeholder="Giphy API &#xD0A4; &#xBD99;&#xC5EC;&#xB123;&#xAE30;" autocomplete="off" spellcheck="false"><button id="gSave">&#xC5F0;&#xACB0;</button></div>
+        <div class="grow" id="gOut" hidden><button id="gClear">&#xD0A4; &#xD574;&#xC81C;</button><span class="small">Powered by GIPHY</span></div>
+      </div>
+      <div class="small" id="aiNote" hidden></div>
+      <div class="manual" id="manual" hidden>
+        <button data-r="1" id="r1">&#x1F602; &#xBE75; &#xD130;&#xC9D0;</button>
+        <button data-r="0.5" id="r2">&#x1F642; &#xD53C;&#xC2DD;</button>
+        <button data-r="0" id="r3">&#x1F610; &#xBCC4;&#xB85C;</button>
+      </div>
+    </section>
+
+    <aside class="lab">
+     <details id="labBox">
+      <summary>AI &#xD559;&#xC2B5; &#xC0C1;&#xD0DC; &#xBCF4;&#xAE30;</summary>
+      <div class="labIn">
+      <div class="stats">
+        <div class="stat"><b id="sRounds">0</b><span>&#xB77C;&#xC6B4;&#xB4DC;</span></div>
+        <div class="stat"><b id="sAvg">&#x2013;</b><span>&#xD3C9;&#xADE0; &#xBCF4;&#xC0C1;</span></div>
+        <div class="stat"><b id="sRecent">&#x2013;</b><span>&#xCD5C;&#xADFC; 5&#xD68C;</span></div>
+      </div>
+      <div>
+        <h2>&#xCE74;&#xB4DC; &#xD480;</h2>
+        <div class="small" id="pool"></div>
+        <div class="small" id="poolNote"></div>
+      </div>
+      <div>
+        <h2>&#xC6C0;&#xC9E4; &#xCDE8;&#xD5A5; (&#xC885;&#xB958;&#xBCC4; &#xD3C9;&#xADE0; &#xC6C3;&#xC74C;)</h2>
+        <div class="wlist" id="gcats"><span class="small">Giphy&#xB97C; &#xC5F0;&#xACB0;&#xD558;&#xBA74; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;.</span></div>
+      </div>
+      <div>
+        <h2>&#xCD5C;&#xADFC; &#xBCF4;&#xC0C1;</h2>
+        <div class="hist" id="hist"></div>
+      </div>
+      <div>
+        <h2>&#xD559;&#xC2B5;&#xB41C; &#xCDE8;&#xD5A5; &#xAC00;&#xC911;&#xCE58; &#x3B8;</h2>
+        <div class="wlist" id="weights"></div>
+      </div>
+      <div>
+        <h2>&#xCE74;&#xB4DC; &#xC21C;&#xC704; (&#xC608;&#xCE21; + &#xD0D0;&#xC0C9; &#xBCF4;&#xB108;&#xC2A4;)</h2>
+        <div class="tbl"><table><thead><tr><th>&#xCE74;&#xB4DC;</th><th>&#xB178;&#xCD9C;</th><th>&#xD3C9;&#xADE0;</th><th>UCB</th></tr></thead><tbody id="rank"></tbody></table></div>
+      </div>
+      <p class="note">&#xBCF4;&#xC0C1; = (&#xB178;&#xCD9C; &#xD6C4; 4&#xCD08; &#xCD5C;&#xB300; &#xC6C3;&#xC74C; &#x2212; &#xC9C1;&#xC804; 1&#xCD08; &#xBB34;&#xD45C;&#xC815; &#xAE30;&#xC900;) &#xF7; 0.45. &#xC785;&#xC744; &#xBC8C;&#xB9AC;&#xACE0; &#xD06C;&#xAC8C; &#xC6C3;&#xC744;&#xC218;&#xB85D; &#xAC00;&#xC0B0;&#xC810;. &#xCC98;&#xC74C;&#xC5D4; &#xC5EC;&#xB7EC; &#xC720;&#xD615;&#xC744; &#xC2DC;&#xD5D8;&#xD558;&#xACE0;, &#xB77C;&#xC6B4;&#xB4DC;&#xAC00; &#xC313;&#xC77C;&#xC218;&#xB85D; &#xC798; &#xBA39;&#xD78C; &#xCE74;&#xB4DC; &#xC704;&#xC8FC;&#xB85C; &#xBCF4;&#xC5EC; &#xC90D;&#xB2C8;&#xB2E4;. &#xC5BC;&#xAD74; &#xC601;&#xC0C1;&#xACFC; &#xC6C3;&#xC74C; &#xC0AC;&#xC9C4;&#xC740; &#xC774; &#xD3F0; &#xBC16;&#xC73C;&#xB85C; &#xB098;&#xAC00;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+      </div>
+     </details>
+    </aside>
+  </div>
+</div>
+
+<script>
+// ---------- \u{CE74}\u{B4DC} \u{D480} ----------
+const FEAT=['\u{AE30}\u{BCF8}\u{AC12}','\u{C544}\u{C7AC}\u{AC1C}\u{ADF8}','\u{B3D9}\u{BB3C}','\u{C9C1}\u{C7A5}','\u{C77C}\u{C0C1}','\u{ADF8}\u{B9BC}\u{D615}','\u{BC18}\u{C804}','\u{C9E7}\u{C740} \u{AE00}','\u{B0B4} \u{C5BC}\u{AD74}\u{B7}\u{C0AC}\u{C9C4}','\u{C800}\u{B141}'];
+const TAGIDX={pun:1,animal:2,office:3,daily:4,visual:5,twist:6,short:7,photo:8};
+let cards=[
+ {id:'p1',type:'pun',q:'\u{C655}\u{C774} \u{B118}\u{C5B4}\u{C9C0}\u{BA74}?',a:'\u{D0B9}\u{CF69}',tags:['pun','twist','short']},
+ {id:'p2',type:'pun',q:'\u{C18C}\u{AC00} \u{B178}\u{B798}\u{D558}\u{BA74}?',a:'\u{C18C}\u{C1A1}',tags:['pun','twist','short','animal']},
+ {id:'p3',type:'pun',q:'\u{C624}\u{B9AC}\u{AC00} \u{C5BC}\u{BA74}?',a:'\u{C5B8}\u{B355}',tags:['pun','twist','short','animal']},
+ {id:'p4',type:'pun',q:'\u{C790}\u{B3D9}\u{CC28}\u{B97C} \u{D1A1} \u{CE58}\u{BA74}?',a:'\u{CE74}\u{D1A1}',tags:['pun','twist','short','daily']},
+ {id:'p5',type:'pun',q:'\u{AC1C}\u{AC00} \u{C0AC}\u{B78C}\u{C744} \u{AC00}\u{B974}\u{CE58}\u{BA74}?',a:'\u{AC1C}\u{C778}\u{C9C0}\u{B3C4}',tags:['pun','twist','animal']},
+ {id:'p6',type:'pun',q:'\u{B538}\u{AE30}\u{AC00} \u{D68C}\u{C0AC}\u{C5D0}\u{C11C} \u{C798}\u{B9AC}\u{BA74}?',a:'\u{B538}\u{AE30}\u{C2DC}\u{B7FD}',tags:['pun','twist','office']},
+ {id:'p7',type:'pun',q:'\u{C138}\u{C0C1}\u{C5D0}\u{C11C} \u{C81C}\u{C77C} \u{C26C}\u{C6B4} \u{C22B}\u{C790}\u{B294}?',a:'190,000',tags:['pun','twist']},
+ {id:'p8',type:'pun',q:'\u{BC18}\u{C131}\u{BB38}\u{C744} \u{C601}\u{C5B4}\u{B85C} \u{D558}\u{BA74}?',a:'\u{AE00}\u{B85C}\u{BC8C}',tags:['pun','twist','short']},
+ {id:'v1',type:'scene',e:'\u{1F408}',cap:'\u{ACE0}\u{C591}\u{C774}\u{B294} \u{CEF5}\u{C744} \u{B5A8}\u{C5B4}\u{B728}\u{B9B0} \u{AC8C} \u{C544}\u{B2D9}\u{B2C8}\u{B2E4}. \u{C911}\u{B825}\u{C744} \u{AC80}\u{C99D}\u{D558}\u{B294} \u{C911}\u{C785}\u{B2C8}\u{B2E4}.',tags:['visual','animal']},
+ {id:'v2',type:'scene',e:'\u{1F9DF} \u{2192} \u{1F483}',cap:'\u{C6D4}\u{C694}\u{C77C} \u{C624}\u{C804} 9\u{C2DC}\u{C758} \u{B098} / \u{AE08}\u{C694}\u{C77C} \u{C624}\u{D6C4} 6\u{C2DC}\u{C758} \u{B098}',tags:['visual','office','daily','short']},
+ {id:'v3',type:'scene',e:'\u{1F4E7}',cap:'\u{BA54}\u{C77C} \u{D55C} \u{D1B5}\u{C774}\u{BA74} \u{B05D}\u{B0AC}\u{C744} 1\u{C2DC}\u{AC04}\u{C9DC}\u{B9AC} \u{D68C}\u{C758}',tags:['visual','office','short']},
+ {id:'v4',type:'scene',e:'\u{1F415}',cap:'"\u{C0B0}" \u{D55C} \u{AE00}\u{C790}\u{B9CC} \u{B9D0}\u{D588}\u{B294}\u{B370} \u{C774}\u{BBF8} \u{D604}\u{AD00}\u{C5D0} \u{BAA9}\u{C904} \u{BB3C}\u{ACE0} \u{C549}\u{C544} \u{C788}\u{C74C}',tags:['visual','animal','daily']},
+ {id:'v5',type:'scene',e:'\u{1F6D2}',cap:'\u{C6B0}\u{C720} \u{C0AC}\u{B7EC} \u{B9C8}\u{D2B8} \u{AC14}\u{B2E4}\u{AC00} \u{C6B0}\u{C720} \u{BE7C}\u{ACE0} \u{B2E4} \u{C0AC} \u{C634}',tags:['visual','daily','short']},
+ {id:'v6',type:'scene',e:'\u{23F0}\u{23F0}\u{23F0}\u{23F0}\u{23F0}',cap:'\u{C54C}\u{B78C} \u{B2E4}\u{C12F} \u{AC1C} \u{B9DE}\u{CD94}\u{ACE0} \u{C5EC}\u{C12F} \u{BC88}\u{C9F8}\u{C5D0} \u{C77C}\u{C5B4}\u{B098}\u{B294} \u{C0AC}\u{B78C}',tags:['visual','daily','short']},
+ {id:'v7',type:'scene',e:'\u{1F986}',cap:'\u{BB3C} \u{C704}\u{C5D0}\u{C120} \u{C6B0}\u{C544}\u{D558}\u{AC8C}, \u{BB3C} \u{C544}\u{B798}\u{C5D0}\u{C120} \u{BBF8}\u{CE5C} \u{B4EF}\u{C774} \u{BC1C}\u{C7A5}\u{AD6C}. \u{ADF8}\u{AC8C} \u{BC14}\u{B85C} \u{CD9C}\u{ADFC}\u{D55C} \u{B098}.',tags:['visual','animal','office','twist']},
+ {id:'v8',type:'scene',e:'\u{1F4BB}',cap:'"\u{CF54}\u{B4DC} \u{D55C} \u{C904}\u{B9CC} \u{ACE0}\u{CE58}\u{BA74} \u{B3FC}" \u{2014} 3\u{C2DC}\u{AC04} \u{C804}',tags:['visual','office','twist','short']},
+ {id:'p9',type:'pun',q:'\u{BC14}\u{B098}\u{B098}\u{AC00} \u{C6C3}\u{C73C}\u{BA74}?',a:'\u{BC14}\u{B098}\u{B098}\u{D0A5}',tags:['pun','twist','short']},
+ {id:'p10',type:'pun',q:'\u{C655}\u{C774} \u{AD81}\u{C5D0} \u{B4E4}\u{C5B4}\u{AC00}\u{AE30} \u{C2EB}\u{C744} \u{B54C} \u{D558}\u{B294} \u{B9D0}\u{C740}?',a:'\u{AD81}\u{C2DC}\u{B801}\u{AD81}\u{C2DC}\u{B801}',tags:['pun','twist']},
+ {id:'p11',type:'pun',q:'\u{BBF8}\u{C18C}\u{C758} \u{BC18}\u{B300}\u{B9D0}\u{C740}?',a:'\u{B2F9}\u{AE30}\u{C18C}',tags:['pun','twist','short']},
+ {id:'p12',type:'pun',q:'\u{C544}\u{BAAC}\u{B4DC}\u{AC00} \u{C8FD}\u{C73C}\u{BA74}?',a:'\u{B2E4}\u{C774}\u{C544}\u{BAAC}\u{B4DC}',tags:['pun','twist','short']},
+ {id:'p13',type:'pun',q:'\u{BE44}\u{AC00} \u{D55C} \u{C2DC}\u{AC04} \u{B3D9}\u{C548} \u{B0B4}\u{B9AC}\u{BA74}?',a:'\u{CD94}\u{C801} 60\u{BD84}',tags:['pun','twist','daily']},
+ {id:'p14',type:'pun',q:'\u{C138}\u{C0C1}\u{C5D0}\u{C11C} \u{AC00}\u{C7A5} \u{B728}\u{AC70}\u{C6B4} \u{ACFC}\u{C77C}\u{C740}?',a:'\u{CC9C}\u{B3C4}\u{BCF5}\u{C22D}\u{C544}',tags:['pun','twist']},
+ {id:'p15',type:'pun',q:'\u{C138}\u{C0C1}\u{C5D0}\u{C11C} \u{AC00}\u{C7A5} \u{BE44}\u{C2FC} \u{C0C8}\u{B294}?',a:'\u{BC31}\u{C870}',tags:['pun','twist','short','animal']},
+ {id:'p16',type:'pun',q:'\u{CC28}\u{AC00} \u{AE5C}\u{C9DD} \u{B180}\u{B77C}\u{BA74}?',a:'\u{CE74}\u{B180}\u{B77C}\u{C720}',tags:['pun','twist','short']},
+ {id:'p17',type:'pun',q:'\u{BB3C}\u{ACE0}\u{AE30}\u{C758} \u{BC18}\u{B300}\u{B9D0}\u{C740}?',a:'\u{BD88}\u{ACE0}\u{AE30}',tags:['pun','twist','short']},
+ {id:'p18',type:'pun',q:'\u{C138}\u{C0C1}\u{C5D0}\u{C11C} \u{AC00}\u{C7A5} \u{BE60}\u{B978} \u{B2ED}\u{C740}?',a:'\u{D6C4}\u{B2E4}\u{B2ED}',tags:['pun','twist','short','animal']},
+ {id:'p19',type:'pun',q:'\u{C138}\u{C0C1}\u{C5D0}\u{C11C} \u{AC00}\u{C7A5} \u{C5B5}\u{C6B8}\u{D55C} \u{B3C4}\u{D615}\u{C740}?',a:'\u{C6D0}\u{D1B5}',tags:['pun','twist','short']},
+ {id:'p20',type:'pun',q:'\u{AE68}\u{AC00} \u{C8FD}\u{C73C}\u{BA74}?',a:'\u{C8FC}\u{ADFC}\u{AE68}',tags:['pun','twist','short']},
+ {id:'p21',type:'pun',q:'\u{D3AD}\u{ADC4}\u{C774} \u{B2E4}\u{B2C8}\u{B294} \u{C911}\u{D559}\u{AD50}\u{B294}?',a:'\u{B0C9}\u{BC29}\u{C911}',tags:['pun','twist','animal']},
+ {id:'p22',type:'pun',q:'\u{C2E0}\u{BC1C}\u{C774} \u{D654}\u{B098}\u{BA74}?',a:'\u{C2E0}\u{BC1C}\u{B048}',tags:['pun','twist','short']},
+ {id:'v9',type:'scene',e:'\u{1F9E6}',cap:'\u{C138}\u{D0C1}\u{AE30}\u{C5D0} \u{C591}\u{B9D0} \u{B450} \u{C9DD} \u{B123}\u{C5C8}\u{B294}\u{B370} \u{D55C} \u{C9DD}\u{B9CC} \u{B098}\u{C634}. \u{B098}\u{BA38}\u{C9C0}\u{B294} \u{B2E4}\u{B978} \u{CC28}\u{C6D0}\u{C73C}\u{B85C} \u{C774}\u{C9C1}\u{D568}.',tags:['visual','daily','twist']},
+ {id:'v10',type:'scene',e:'\u{1F355}',cap:'"\u{B531} \u{D55C} \u{C870}\u{AC01}\u{B9CC}" \u{2014} \u{BE48} \u{C0C1}\u{C790} \u{C55E}\u{C5D0}\u{C11C}',tags:['visual','daily','twist','short']},
+ {id:'v11',type:'scene',e:'\u{1F439}',cap:'\u{BCFC}\u{C5D0} \u{D574}\u{BC14}\u{B77C}\u{AE30}\u{C528} 37\u{AC1C} \u{B123}\u{ACE0} "\u{B098} \u{C544}\u{BB34}\u{AC83}\u{B3C4} \u{C548} \u{BA39}\u{C5C8}\u{B294}\u{B370}?"',tags:['visual','animal','twist']},
+ {id:'v12',type:'scene',e:'\u{1F50B}',cap:'\u{BC30}\u{D130}\u{B9AC} 1%\u{AC00} \u{B418}\u{B294} \u{C21C}\u{AC04} \u{C190}\u{AC00}\u{B77D}\u{C774} \u{B450} \u{BC30} \u{BE68}\u{B77C}\u{C9C0}\u{B294} \u{C0AC}\u{B78C}',tags:['visual','daily','short']},
+ {id:'v13',type:'scene',e:'\u{1F9A5}',cap:'\u{B098}\u{BB34}\u{B298}\u{BCF4}\u{C758} \u{ACC4}\u{D68D}\u{D45C}: \u{C624}\u{B298} \u{D560} \u{C77C}\u{C740} \u{B0B4}\u{C77C}\u{B85C}, \u{B0B4}\u{C77C} \u{D560} \u{C77C}\u{C740} \u{BAA8}\u{B808}\u{B85C}.',tags:['visual','animal','twist']},
+ {id:'v14',type:'scene',e:'\u{1F64B}',cap:'"\u{B2E4}\u{B4E4} \u{C758}\u{ACAC} \u{D3B8}\u{D558}\u{AC8C} \u{C8FC}\u{C138}\u{C694}" \u{2026} (\u{C544}\u{BB34}\u{B3C4} \u{B9D0} \u{C548} \u{D568})',tags:['visual','office','short']},
+ {id:'v15',type:'scene',e:'\u{1F399}\u{FE0F}',cap:'\u{D68C}\u{C758} \u{C911} \u{B9C8}\u{C774}\u{D06C} \u{CF1C}\u{C9C4} \u{C904} \u{BAA8}\u{B974}\u{ACE0} \u{D63C}\u{C7A3}\u{B9D0}: "\u{C544} \u{C774}\u{AC70} \u{C5B8}\u{C81C} \u{B05D}\u{B098}"',tags:['visual','office','twist']},
+ {id:'v16',type:'scene',e:'\u{1F427}\u{1F427}\u{1F427}',cap:'\u{D3AD}\u{ADC4}\u{B4E4}\u{C758} \u{CD9C}\u{ADFC}\u{AE38}: \u{B2E4} \u{AC19}\u{C774} \u{B4A4}\u{B6B1}\u{B4A4}\u{B6B1}, \u{B2E4} \u{AC19}\u{C774} \u{C9C0}\u{AC01}',tags:['visual','animal','office']},
+ {id:'v17',type:'scene',e:'\u{1F35C}',cap:'\u{B77C}\u{BA74} \u{D558}\u{B098}\u{B9CC} \u{B053}\u{C778}\u{B2E4}\u{B354}\u{B2C8} \u{B450} \u{AC1C} \u{B053}\u{C774}\u{ACE0} \u{BC25}\u{AE4C}\u{C9C0} \u{B9D0}\u{C544} \u{BA39}\u{C74C}',tags:['visual','daily','twist']},
+ {id:'v18',type:'scene',e:'\u{1F6CB}\u{FE0F}',cap:'"5\u{BD84}\u{B9CC} \u{B204}\u{C6E0}\u{B2E4} \u{C77C}\u{C5B4}\u{B0A0}\u{AC8C}" \u{2014} \u{D574}\u{AC00} \u{C9D0}',tags:['visual','daily','twist','short']},
+ {id:'v19',type:'scene',e:'\u{1F438}',cap:'\u{AC1C}\u{AD6C}\u{B9AC} \u{B2E8}\u{D1A1}\u{BC29}: \u{AC1C}\u{AD74}? / \u{AC1C}\u{AD74}. / \u{AC1C}\u{AD74}!! (\u{C548} \u{C77D}\u{C74C} 3)',tags:['visual','animal','short']},
+ {id:'v20',type:'scene',e:'\u{1F6D7}',cap:'\u{C5D8}\u{B9AC}\u{BCA0}\u{C774}\u{D130} \u{BB38} \u{B2EB}\u{D788}\u{B294} \u{C21C}\u{AC04} \u{C778}\u{C0DD} \u{CD5C}\u{ACE0} \u{AE30}\u{B85D}\u{C73C}\u{B85C} \u{C804}\u{B825} \u{C9C8}\u{C8FC}',tags:['visual','daily']},
+ {id:'v21',type:'scene',e:'\u{1F411}',cap:'\u{C7A0}\u{C774} \u{C548} \u{C640}\u{C11C} \u{C591}\u{C744} \u{C138}\u{B294}\u{B370}, \u{C591}\u{C774} \u{B098}\u{B97C} \u{C138}\u{AE30} \u{C2DC}\u{C791}\u{D568}',tags:['visual','animal','twist']},
+ {id:'v22',type:'scene',e:'\u{1F5C2}\u{FE0F}',cap:'\u{CD5C}\u{C885}_\u{C9C4}\u{C9DC}\u{CD5C}\u{C885}_\u{C218}\u{C815}3_\u{C774}\u{AC8C}\u{C9C4}\u{C9DC}\u{CD5C}\u{C885}.pptx',tags:['visual','office','short']},
+ {id:'v23',type:'scene',e:'\u{2615}',cap:'\u{CEE4}\u{D53C} \u{B9C8}\u{C154}\u{C11C} \u{C7A0} \u{AE6C} \u{AC8C} \u{C544}\u{B2C8}\u{B77C}, \u{CEE4}\u{D53C} \u{C0AC}\u{B7EC} \u{AC78}\u{C5B4}\u{AC00}\u{B2E4}\u{AC00} \u{C7A0} \u{AE78}',tags:['visual','office','twist']},
+ {id:'v24',type:'scene',e:'\u{1F422}',cap:'\u{AC70}\u{BD81}\u{C774} \u{D0DD}\u{BC30}: "\u{BC30}\u{C1A1}\u{C774} \u{CD9C}\u{BC1C}\u{D588}\u{C2B5}\u{B2C8}\u{B2E4}" (3\u{B144} \u{C804})',tags:['visual','animal','twist','short']},
+ {id:'v25',type:'scene',e:'\u{1F9CA}',cap:'\u{B0C9}\u{C7A5}\u{ACE0} \u{BB38} \u{C5F4}\u{ACE0} \u{BB50} \u{AEBC}\u{B0B4}\u{B7EC} \u{C654}\u{B294}\u{C9C0} \u{AE4C}\u{BA39}\u{C74C}',tags:['visual','daily','short']},
+ {id:'v26',type:'scene',e:'\u{1F992}',cap:'\u{AE30}\u{B9B0}: \u{B0A8}\u{B4E4} \u{B2E4} \u{ACE0}\u{AC1C} \u{C219}\u{C774}\u{ACE0} \u{D3F0} \u{BCFC} \u{B54C} \u{D63C}\u{C790} \u{C640}\u{C774}\u{D30C}\u{C774} \u{C81C}\u{C77C} \u{C798} \u{C7A1}\u{D798}',tags:['visual','animal','twist']},
+ {id:'v27',type:'scene',e:'\u{1F4C5}',cap:'"\u{B2E4}\u{C74C} \u{C8FC}\u{C5D0} \u{BC25} \u{D55C}\u{BC88} \u{BA39}\u{C790}" \u{2014} 2\u{B144}\u{C9F8} \u{B2E4}\u{C74C} \u{C8FC}',tags:['visual','daily','twist','short']},
+ {id:'v28',type:'scene',e:'\u{1F436}',cap:'"\u{AC04}\u{C2DD}"\u{C774}\u{B77C}\u{ACE0} \u{C18D}\u{C0AD}\u{C600}\u{C744} \u{BFD0}\u{C778}\u{B370} \u{B2E4}\u{B978} \u{BC29}\u{C5D0}\u{C11C} \u{C21C}\u{AC04}\u{C774}\u{B3D9}',tags:['visual','animal','short']},
+ {id:'v29',type:'scene',e:'\u{2328}\u{FE0F}',cap:'\u{C0C1}\u{C0AC}\u{AC00} \u{C9C0}\u{B098}\u{AC00}\u{B294} \u{C21C}\u{AC04} \u{C5D1}\u{C140} \u{CC3D}\u{C73C}\u{B85C} \u{BC14}\u{AFB8}\u{B294} \u{BC18}\u{C0AC}\u{C2E0}\u{ACBD}',tags:['visual','office','short']},
+ {id:'v30',type:'scene',e:'\u{1F331}',cap:'\u{B2E4}\u{C774}\u{C5B4}\u{D2B8} 1\u{C77C}\u{CC28}: \u{C0D0}\u{B7EC}\u{B4DC} \u{C8FC}\u{BB38}\u{D568}. \u{B4DC}\u{B808}\u{C2F1} \u{C138} \u{AC1C} \u{CD94}\u{AC00}\u{D568}.',tags:['visual','daily','twist']},
+];
+// \u{C7A5}\u{BA74} \u{CE74}\u{B4DC}\u{BCC4} \u{C6C0}\u{C9C1}\u{C784} (\u{B0B4}\u{C6A9}\u{C5D0} \u{B9DE}\u{CD98} \u{BAB8}\u{AC1C}\u{ADF8})
+const ANIM={v1:'sneak',v2:'jitter',v3:'zoom',v4:'bounce',v5:'wobble',v6:'jitter',v7:'wobble',v8:'jitter',v9:'spin',v10:'zoom',
+  v11:'zoom',v12:'jitter',v13:'crawl',v14:'wobble',v15:'jitter',v16:'crawl',v17:'bounce',v18:'wobble',v19:'bounce',v20:'crawl',
+  v21:'spin',v22:'jitter',v23:'zoom',v24:'crawl',v25:'wobble',v26:'bounce',v27:'spin',v28:'bounce',v29:'jitter',v30:'zoom'};
+// \u{CE74}\u{BA54}\u{B77C}\u{AC00} \u{CF1C}\u{C9C0}\u{BA74} \u{CD94}\u{AC00}\u{B418}\u{B294} '\u{AC70}\u{C6B8} \u{CE74}\u{B4DC}' (\u{B0B4} \u{C5BC}\u{AD74}\u{C5D0} \u{D544}\u{D130})
+const MIRROR_SLOT={id:'mirror',type:'mirror',tags:['visual','photo','twist']};
+
+// ---------- \u{C870}\u{D569}\u{D615} \u{C720}\u{BA38} \u{C0DD}\u{C131}\u{AE30}: \u{D2C0} \u{D7} \u{B2E8}\u{C5B4}\u{B85C} \u{C218}\u{CC9C} \u{AC1C} ----------
+const ANI=[['\u{1F422}','\u{AC70}\u{BD81}\u{C774}','\u{2026}'],['\u{1F9A5}','\u{B098}\u{BB34}\u{B298}\u{BCF4}','\u{2026}'],['\u{1F427}','\u{D3AD}\u{ADC4}','\u{AF65}'],['\u{1F439}','\u{D584}\u{C2A4}\u{D130}','\u{CC0D}'],['\u{1F408}','\u{ACE0}\u{C591}\u{C774}','\u{B0E5}'],['\u{1F415}','\u{AC15}\u{C544}\u{C9C0}','\u{BA4D}'],
+ ['\u{1F986}','\u{C624}\u{B9AC}','\u{AF65}'],['\u{1F40C}','\u{B2EC}\u{D33D}\u{C774}','\u{2026}'],['\u{1F992}','\u{AE30}\u{B9B0}','\u{C74C}'],['\u{1F419}','\u{BB38}\u{C5B4}','\u{BED0}\u{B054}'],['\u{1F43B}','\u{ACF0}','\u{C73C}\u{B974}\u{B801}'],['\u{1F994}','\u{ACE0}\u{C2B4}\u{B3C4}\u{CE58}','\u{D081}'],
+ ['\u{1F413}','\u{B2ED}','\u{AF2C}\u{B07C}\u{C624}'],['\u{1F43C}','\u{D310}\u{B2E4}','\u{B0E0}'],['\u{1F9AD}','\u{BB3C}\u{BC94}','\u{C624}\u{C6B0}'],['\u{1F438}','\u{AC1C}\u{AD6C}\u{B9AC}','\u{AC1C}\u{AD74}'],['\u{1F43F}\u{FE0F}','\u{B2E4}\u{B78C}\u{C950}','\u{CC0D}\u{CC0D}'],['\u{1F999}','\u{B77C}\u{B9C8}','\u{D264}']];
+const NEWS=["\u{D68C}\u{C0AC} \u{B300}\u{D45C}\u{B85C} \u{CDE8}\u{C784}\u{2026} \u{CCAB} \u{C9C0}\u{C2DC}\u{B294} '\u{B0AE}\u{C7A0} \u{C2DC}\u{AC04} \u{B450} \u{BC30}'","\u{B9C8}\u{B77C}\u{D1A4} \u{C644}\u{C8FC}\u{2026} \u{ACB0}\u{C2B9}\u{C120}\u{AE4C}\u{C9C0} 3\u{BC15} 4\u{C77C}","\u{C720}\u{D29C}\u{BE0C} \u{AC1C}\u{C124} 1\u{C2DC}\u{AC04} \u{B9CC}\u{C5D0} \u{AD6C}\u{B3C5}\u{C790} 1\u{BA85} \u{B2EC}\u{C131} (\u{C5C4}\u{B9C8})",
+ "\u{B85C}\u{B610} 1\u{B4F1} \u{B2F9}\u{CCA8}\u{2026} \u{C804}\u{C561} \u{AC04}\u{C2DD}\u{C5D0} \u{D22C}\u{C790}","\u{D5EC}\u{C2A4}\u{C7A5} 1\u{B144} \u{D68C}\u{C6D0}\u{AD8C} \u{B4F1}\u{B85D}\u{2026} \u{C624}\u{B298}\u{B85C} \u{CD9C}\u{C11D} 0\u{C77C}\u{C9F8}","\u{C778}\u{AC04}\u{C5D0}\u{AC8C} '\u{C880} \u{C5F4}\u{C2EC}\u{D788} \u{C0B4}\u{C544}\u{B77C}' \u{CDA9}\u{ACE0}\u{D574} \u{B17C}\u{B780}",
+ "\u{C694}\u{B9AC} \u{B300}\u{D68C} \u{C6B0}\u{C2B9}\u{2026} \u{C2EC}\u{C0AC}\u{C704}\u{C6D0} \u{C804}\u{C6D0} \u{BC30}\u{BD88}\u{B7EC}\u{C11C} \u{AE30}\u{AD8C}","\u{C790}\u{AE30} \u{ADF8}\u{B9BC}\u{C790}\u{C5D0}\u{AC8C} 3\u{C2DC}\u{AC04}\u{C9F8} \u{C0AC}\u{ACFC} \u{C911}","\u{D68C}\u{C2DD} 2\u{CC28} \u{B178}\u{B798}\u{BC29}\u{C5D0}\u{C11C} \u{C575}\u{CF5C} 17\u{BC88} \u{BC1B}\u{C544}",
+ "\u{C8FC}\u{C2DD} \u{D22C}\u{C790} \u{C2DC}\u{C791}\u{2026} \u{C804} \u{C7AC}\u{C0B0} \u{B3C4}\u{D1A0}\u{B9AC}\u{B85C} \u{BC14}\u{AFD4}","\u{C5D8}\u{B9AC}\u{BCA0}\u{C774}\u{D130} '\u{B2EB}\u{D798}' \u{B300}\u{C2E0} \u{BE44}\u{C0C1}\u{BCA8} \u{B20C}\u{B7EC} \u{B3D9}\u{B124} \u{C720}\u{BA85} \u{C778}\u{C0AC} \u{B4F1}\u{ADF9}","\u{C774}\u{C0AC} \u{AC14}\u{B294}\u{B370} \u{C9D0}\u{C774} \u{C804}\u{BD80} \u{ACFC}\u{C790} \u{C0C1}\u{C790}",
+ "\u{C6D4}\u{C694}\u{BCD1} \u{CE58}\u{B8CC}\u{C81C} \u{AC1C}\u{BC1C}\u{2026} \u{C8FC}\u{C131}\u{BD84}\u{C740} '\u{AE08}\u{C694}\u{C77C}'","\u{BA74}\u{C811}\u{C5D0}\u{C11C} \u{C7A5}\u{C810} \u{BB3B}\u{C790} '\u{C7A0}\u{C744} \u{C798} \u{C7A1}\u{B2C8}\u{B2E4}' \u{B2F5}\u{D574} \u{D569}\u{ACA9}"];
+const OFF=["\u{C790}\u{AE30}\u{C18C}\u{AC1C}\u{D558}\u{B2E4}\u{AC00} \u{ACA8}\u{C6B8}\u{C7A0} \u{B4E4}\u{C5B4} \u{BC84}\u{B9BC}","\u{D68C}\u{C758}\u{C2E4} \u{C758}\u{C790}\u{C5D0} \u{B07C}\u{C5B4}\u{C11C} \u{D68C}\u{C758} \u{CC38}\u{C11D} \u{C2E4}\u{D328}","\u{B2E8}\u{D1A1}\u{BC29}\u{C5D0} \u{C774}\u{BAA8}\u{D2F0}\u{CF58}\u{B9CC} 37\u{AC1C} \u{BCF4}\u{B0C4}","\u{C810}\u{C2EC}\u{C2DC}\u{AC04}\u{C744} \u{C800}\u{B141}\u{AE4C}\u{C9C0} \u{C5F0}\u{C7A5} \u{C2E0}\u{CCAD}\u{D568}",
+ "\u{C5D1}\u{C140} \u{C140} \u{BCD1}\u{D569}\u{D558}\u{B2E4}\u{AC00} \u{BCF8}\u{C778}\u{B3C4} \u{BCD1}\u{D569}\u{B428}","\u{BCF4}\u{ACE0}\u{C11C} \u{B300}\u{C2E0} \u{AC04}\u{C2DD} \u{BAA9}\u{B85D} \u{C81C}\u{CD9C}\u{D568}","\u{D1F4}\u{ADFC} 5\u{BD84} \u{C804}\u{BD80}\u{D130} \u{AC11}\u{C790}\u{AE30} \u{C138}\u{C0C1}\u{C5D0}\u{C11C} \u{C81C}\u{C77C} \u{BE68}\u{B77C}\u{C9D0}","'\u{B135}'\u{C744} '\u{B0C5}'\u{C73C}\u{B85C} \u{BCF4}\u{B0B4}\u{ACE0} \u{D558}\u{B8E8} \u{C885}\u{C77C} \u{D6C4}\u{D68C}\u{D568}",
+ "\u{D504}\u{B9B0}\u{D130}\u{B791} \u{AE30}\u{C2F8}\u{C6C0}\u{D558}\u{B2E4}\u{AC00} \u{C9D0}","\u{BD80}\u{C7A5}\u{B2D8} \u{C790}\u{B9AC}\u{C5D0}\u{C11C} \u{B0AE}\u{C7A0} \u{C790}\u{B2E4}\u{AC00} \u{BC1C}\u{ACAC}\u{B428}","\u{C0AC}\u{C6D0}\u{C99D} \u{C0AC}\u{C9C4}\u{C774} \u{B108}\u{BB34} \u{C798} \u{B098}\u{C640}\u{C11C} \u{C544}\u{BB34}\u{B3C4} \u{BABB} \u{C54C}\u{C544}\u{BD04}","\u{C640}\u{C774}\u{D30C}\u{C774} \u{BE44}\u{BC88}\u{C744} \u{BAB0}\u{B77C}\u{C11C} \u{C870}\u{D1F4}\u{D568}",
+ "\u{CEE4}\u{D53C} \u{C2EC}\u{BD80}\u{B984} \u{AC14}\u{B2E4}\u{AC00} \u{CE74}\u{D398} \u{C9C1}\u{C6D0}\u{C73C}\u{B85C} \u{CDE8}\u{C9C1}\u{D568}","\u{D68C}\u{C758} \u{C911} '\u{C88B}\u{C740} \u{C9C8}\u{BB38}\u{C785}\u{B2C8}\u{B2E4}'\u{B9CC} \u{C5F4}\u{B450} \u{BC88} \u{B9D0}\u{D568}"];
+const DIET=["\u{C0D0}\u{B7EC}\u{B4DC}\u{C5D0} \u{CE58}\u{D0A8} \u{D1A0}\u{D551} \u{CD94}\u{AC00}\u{D568}","\u{C6B4}\u{B3D9}\u{BCF5} \u{C0AC}\u{B294} \u{AC78}\u{B85C} \u{C624}\u{B298} \u{C6B4}\u{B3D9} \u{B05D}","\u{BB3C}\u{B9CC} \u{B9C8}\u{C168}\u{B294}\u{B370} \u{ADF8} \u{BB3C}\u{C774} \u{BC14}\u{B098}\u{B098}\u{C6B0}\u{C720}\u{C600}\u{C74C}","\u{C57C}\u{C2DD} \u{BA39}\u{BC29} \u{BCF4}\u{B2E4}\u{AC00} \u{ACB0}\u{AD6D} \u{C8FC}\u{BB38}\u{D568}",
+ "'\u{B0B4}\u{C77C}\u{BD80}\u{D130}'\u{B97C} \u{C624}\u{B298}\u{B3C4} \u{AC31}\u{C2E0}\u{D568}","\u{CCB4}\u{C911}\u{ACC4} \u{BC30}\u{D130}\u{B9AC}\u{B97C} \u{BE8C}","\u{D55C} \u{C785}\u{B9CC} \u{BA39}\u{B294}\u{B2E4}\u{B354}\u{B2C8} \u{D55C} \u{C785}\u{C774} \u{B108}\u{BB34} \u{D07C}","\u{ACC4}\u{B2E8} \u{C624}\u{B974}\u{AE30} \u{C2DC}\u{C791}\u{2026} 2\u{CE35}\u{C5D0}\u{C11C} \u{C5D8}\u{B9AC}\u{BCA0}\u{C774}\u{D130} \u{D0D0}",
+ "\u{C800}\u{B141} \u{AD76}\u{C5C8}\u{B2E4}\u{AC00} \u{C0C8}\u{BCBD} 2\u{C2DC}\u{C5D0} \u{B77C}\u{BA74} \u{B450} \u{AC1C}","'\u{B098}\u{B220} \u{BA39}\u{C73C}\u{BA74} \u{CE7C}\u{B85C}\u{B9AC}\u{AC00} \u{C5C6}\u{C5B4}\u{C9C4}\u{B2E4}' \u{C774}\u{B860} \u{BC1C}\u{D45C}"];
+const TMI=["\u{ACC4}\u{D68D}\u{D615}\u{C774}\u{B77C}\u{C11C} \u{ACC4}\u{D68D}\u{B300}\u{B85C} \u{B2A6}\u{AC8C} \u{C634}","\u{C778}\u{C2A4}\u{D0C0} \u{D314}\u{B85C}\u{C6CC}\u{AC00} \u{C0C1}\u{CD94}\u{BC16}\u{C5D0} \u{C5C6}\u{C74C}","\u{CDE8}\u{BBF8}\u{B294} \u{B0A8}\u{C758} \u{AC04}\u{C2DD} \u{B0C4}\u{C0C8} \u{B9E1}\u{AE30}","\u{C8FC}\u{B9D0}\u{C5D4} \u{C544}\u{BB34}\u{AC83}\u{B3C4} \u{C548} \u{D558}\u{B294} \u{AC78} \u{C544}\u{C8FC} \u{C5F4}\u{C2EC}\u{D788} \u{D568}",
+ "\u{B178}\u{B798}\u{BC29} 18\u{BC88}\u{C740} \u{C560}\u{AD6D}\u{AC00} 4\u{C808}","\u{BE44}\u{BC00}\u{BC88}\u{D638}\u{AC00} \u{C804}\u{BD80} '\u{AC04}\u{C2DD}1234'","\u{AC70}\u{C6B8} \u{BCFC} \u{B54C}\u{B9C8}\u{B2E4} '\u{C624}\u{B298}\u{B3C4} \u{ADC0}\u{C5FD}\u{B2E4}' \u{D63C}\u{C7A3}\u{B9D0}\u{D568}","\u{C7A5}\u{B798} \u{D76C}\u{B9DD}\u{C740} \u{AC74}\u{BB3C}\u{C8FC}\u{C758} \u{BC18}\u{B824}\u{B3D9}\u{BB3C}",
+ "\u{C54C}\u{B78C} 12\u{AC1C}\u{B97C} \u{B044}\u{B294} \u{B370} \u{C544}\u{C8FC} \u{B2A5}\u{C219}\u{D568}","\u{CE74}\u{D1A1} \u{D504}\u{B85C}\u{D544} \u{C0AC}\u{C9C4}\u{C744} 10\u{B144}\u{C9F8} \u{C548} \u{BC14}\u{AFC8}","\u{D0DD}\u{BC30} \u{AE30}\u{C0AC}\u{B2D8} \u{BC1C}\u{C18C}\u{B9AC}\u{B97C} \u{AD6C}\u{BCC4}\u{D560} \u{C218} \u{C788}\u{C74C}","\u{C790}\u{AE30} \u{C804}\u{C5D0} \u{B0B4}\u{C77C} \u{AC71}\u{C815}\u{C744} \u{BBF8}\u{B9AC} \u{B2E4} \u{D574} \u{B460}"];
+const REV=["\u{BC25}\u{C740} \u{C8FC}\u{B294}\u{B370} \u{C0C1}\u{C790}\u{B97C} \u{B108}\u{BB34} \u{BE68}\u{B9AC} \u{BC84}\u{B9BC}","\u{C0B0}\u{CC45}\u{C740} \u{C88B}\u{C740}\u{B370} \u{D734}\u{B300}\u{D3F0}\u{C744} \u{B108}\u{BB34} \u{C624}\u{B798} \u{BD04}","\u{C4F0}\u{B2E4}\u{B4EC}\u{AE30} \u{C2E4}\u{B825}\u{C740} \u{C88B}\u{C73C}\u{B098} \u{AC04}\u{C2DD} \u{B2E8}\u{AC00}\u{AC00} \u{B0AE}\u{C74C}","\u{C7A0}\u{C740} \u{B9CE}\u{C774} \u{C790}\u{B294}\u{B370} \u{B098}\u{B791} \u{C548} \u{B180}\u{C544} \u{C90C}",
+ "\u{B9D0}\u{C774} \u{B108}\u{BB34} \u{B9CE}\u{C74C}. \u{B300}\u{BD80}\u{BD84} '\u{C548} \u{B3FC}'\u{C784}","\u{CCAD}\u{C18C}\u{AE30}\u{B77C}\u{B294} \u{AD34}\u{BB3C}\u{C744} \u{B370}\u{B824}\u{C634}. \u{BCC4} \u{D558}\u{B098} \u{BE8C}","\u{C18C}\u{D30C}\u{B97C} \u{C790}\u{AFB8} \u{C790}\u{AE30} \u{AC70}\u{B77C}\u{ACE0} \u{C6B0}\u{AE40}","\u{B0B4} \u{C0DD}\u{C77C}\u{C744} \u{AE4C}\u{BA39}\u{C74C}. \u{ADFC}\u{B370} \u{B0B4} \u{C0DD}\u{C77C} \u{B098}\u{B3C4} \u{BAA8}\u{B984}",
+ "\u{C0AC}\u{C9C4}\u{C744} \u{B108}\u{BB34} \u{B9CE}\u{C774} \u{CC0D}\u{C74C}. \u{CD08}\u{C0C1}\u{AD8C} \u{D611}\u{C758} \u{D544}\u{C694}","\u{D1F4}\u{ADFC}\u{D558}\u{ACE0} \u{BC18}\u{AC00}\u{C6CC}\u{D574} \u{C8FC}\u{B294} \u{AC74} \u{C778}\u{C815}"];
+const BA=[["\u{C6D4}\u{AE09}\u{B0A0}","\u{C6D4}\u{AE09} \u{C0AC}\u{D758} \u{B4A4}"],["\u{AE08}\u{C694}\u{C77C} \u{C624}\u{D6C4} 6\u{C2DC}","\u{C6D4}\u{C694}\u{C77C} \u{C624}\u{C804} 9\u{C2DC}"],["\u{B2E4}\u{C774}\u{C5B4}\u{D2B8} \u{ACB0}\u{C2EC}\u{D560} \u{B54C}","\u{CE58}\u{D0A8} \u{B0C4}\u{C0C8} \u{B9E1}\u{C558}\u{C744} \u{B54C}"],["\u{C54C}\u{B78C} \u{B9DE}\u{CD9C} \u{B54C}","\u{C54C}\u{B78C} \u{C6B8}\u{B9B4} \u{B54C}"],
+ ["\u{C5EC}\u{D589} \u{ACC4}\u{D68D} \u{C138}\u{C6B8} \u{B54C}","\u{CE74}\u{B4DC}\u{AC12} \u{B098}\u{C62C} \u{B54C}"],["\u{C2DC}\u{D5D8} \u{BC94}\u{C704} \u{ACF5}\u{C9C0} \u{B54C}","\u{C2DC}\u{D5D8} \u{C804}\u{B0A0} \u{C0C8}\u{BCBD}"],["\u{D0DD}\u{BC30} \u{C8FC}\u{BB38}\u{D560} \u{B54C}","\u{D0DD}\u{BC30} \u{C0C1}\u{C790} \u{BC84}\u{B9B4} \u{B54C}"],["\u{C0C8}\u{D574} \u{CCAB}\u{B0A0}","\u{C0C8}\u{D574} 1\u{C6D4} 3\u{C77C}"],
+ ["\u{D5EC}\u{C2A4}\u{C7A5} \u{B4F1}\u{B85D}\u{D560} \u{B54C}","\u{D5EC}\u{C2A4}\u{C7A5} \u{B4F1}\u{B85D} \u{B2E4}\u{C74C} \u{B0A0}"],["\u{D1F4}\u{ADFC} 1\u{BD84} \u{C804}","\u{D1F4}\u{ADFC} 1\u{BD84} \u{C804}\u{C5D0} \u{C628} \u{BA54}\u{C77C} \u{BD24}\u{C744} \u{B54C}"]];
+const GOODE=['\u{1F60E}','\u{1F929}','\u{1F483}','\u{1F57A}','\u{1F9B8}','\u{1F973}'],BADE=['\u{1F9DF}','\u{1FAE0}','\u{1F635}','\u{1F47B}','\u{1F954}','\u{1FAA6}'];
+const PLAN=[["\u{C544}\u{CE68} 6\u{C2DC} \u{AE30}\u{C0C1}","\u{C624}\u{D6C4} 2\u{C2DC} \u{AE30}\u{C0C1}, \u{ADF8}\u{AC83}\u{B3C4} \u{BC30}\u{ACE0}\u{D30C}\u{C11C}"],["\u{D558}\u{B8E8} \u{B9CC} \u{BCF4} \u{AC77}\u{AE30}","\u{B0C9}\u{C7A5}\u{ACE0}\u{AE4C}\u{C9C0} \u{C655}\u{BCF5} \u{C5F4} \u{BC88}"],["\u{C6D4}\u{AE09} \u{C808}\u{BC18} \u{C800}\u{CD95}","\u{D0DD}\u{BC30} \u{C808}\u{BC18} \u{C218}\u{B839}"],
+ ["\u{CC45} \u{D55C} \u{AD8C} \u{C644}\u{B3C5}","\u{CC45} \u{D45C}\u{C9C0} \u{C0AC}\u{C9C4}\u{B9CC} \u{CC0D}\u{C5B4} \u{C62C}\u{B9BC}"],["\u{C77C}\u{CC0D} \u{C790}\u{AE30}","\u{C0C8}\u{BCBD} 3\u{C2DC}\u{AE4C}\u{C9C0} \u{C1FC}\u{CE20} \u{C2DC}\u{CCAD}"],["\u{C6B4}\u{B3D9} 1\u{C2DC}\u{AC04}","\u{C6B4}\u{B3D9} \u{C601}\u{C0C1} 1\u{C2DC}\u{AC04} \u{C2DC}\u{CCAD}"],
+ ["\u{BC29} \u{CCAD}\u{C18C}","\u{BC29} \u{CCAD}\u{C18C} \u{C601}\u{C0C1} \u{BCF4}\u{BA70} \u{AC10}\u{D0C4}"],["\u{C678}\u{AD6D}\u{C5B4} \u{ACF5}\u{BD80}","\u{C678}\u{AD6D}\u{C5B4} \u{C790}\u{B9C9}\u{C73C}\u{B85C} \u{B4DC}\u{B77C}\u{B9C8} \u{C815}\u{C8FC}\u{D589}"]];
+const ANS=['wobble','bounce','spin','jitter','zoom','sneak'];
+const hasB=w=>{const c=w.charCodeAt(w.length-1);return c>=0xAC00&&c<=0xD7A3&&(c-0xAC00)%28!==0};
+const jo=(w,a,b)=>w+(hasB(w)?a:b);   // \u{BC1B}\u{CE68}\u{C5D0} \u{B530}\u{B77C} \u{C774}/\u{AC00}, \u{C740}/\u{B294} \u{C790}\u{B3D9} \u{C120}\u{D0DD}
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const GEN=[
+ {k:'news',f:a=>({e:a[0],cap:`[\u{C18D}\u{BCF4}] ${jo(a[1],'\u{C774}','\u{AC00}')} ${pick(NEWS)}`,tags:['visual','animal','twist']})},
+ {k:'office',f:a=>({e:a[0]+'\u{1F4BC}',cap:`${a[1]}\u{C758} \u{CCAB} \u{CD9C}\u{ADFC}: ${pick(OFF)}`,tags:['visual','animal','office','twist']})},
+ {k:'diet',f:a=>({e:a[0]+'\u{1F957}',cap:`${a[1]}\u{C758} \u{B2E4}\u{C774}\u{C5B4}\u{D2B8} ${ri(1,30)}\u{C77C}\u{CC28}: ${pick(DIET)}`,tags:['visual','animal','daily','twist']})},
+ {k:'tmi',f:a=>({e:a[0],cap:`\u{C544}\u{BB34}\u{B3C4} \u{C548} \u{BB3C}\u{C5B4}\u{BCF8} ${a[1]}\u{C758} TMI: ${pick(TMI)}`,tags:['visual','animal']})},
+ {k:'review',f:a=>({e:a[0]+'\u{1F4DD}',cap:`${jo(a[1],'\u{C774}','\u{AC00}')} \u{C4F4} \u{C778}\u{AC04} \u{B9AC}\u{BDF0} ${'\u{2605}'.repeat(ri(1,3)).padEnd(5,'\u{2606}')}: "${pick(REV)}"`,tags:['visual','animal','twist']})},
+ {k:'chat',f:a=>{if(a[2]==='\u{2026}')a=pick(ANI.filter(z=>z[2]!=='\u{2026}'));const s=a[2];
+   return {e:a[0]+'\u{1F4AC}',cap:`${a[1]} \u{B2E8}\u{D1A1}\u{BC29}: "${s}?" "${s}." "${s}!!" (\u{C548} \u{C77D}\u{C74C} ${ri(2,99)})`,tags:['visual','animal','short']}}},
+ {k:'ba',f:()=>{const p=pick(BA);return {e:pick(GOODE)+' \u{2192} '+pick(BADE),cap:`${p[0]}\u{C758} \u{B098} / ${p[1]}\u{C758} \u{B098}`,tags:['visual','daily','short'],subj:'\u{B098}'}}},
+ {k:'plan',f:a=>{const p=pick(PLAN);return {e:a[0]+'\u{1F5D3}\u{FE0F}',cap:`${a[1]}\u{C758} \u{ACC4}\u{D68D}: ${p[0]} / \u{D604}\u{C2E4}: ${p[1]}`,tags:['visual','animal','daily','twist']}}},
+];
+let seenGen=new Set();
+function loadGen(){try{seenGen=new Set(JSON.parse(localStorage.getItem('smile-lab-gen')||'[]'))}catch(e){}}
+function saveGen(){try{localStorage.setItem('smile-lab-gen',JSON.stringify([...seenGen].slice(-3000)))}catch(e){}}
+function genCard(){const t=pick(GEN),a=pick(ANI),o=t.f(a);o.type='scene';o.gen=t.k;o.subj=o.subj||a[1];o.an=pick(ANS);o.id='g:'+hash(o.cap);return o}
+function genBatch(n){const out=[],ids=new Set();for(let i=0;i<n*4&&out.length<n;i++){const g=genCard();if(seenGen.has(g.id)||ids.has(g.id))continue;ids.add(g.id);out.push(g)}return out}
+// \u{BA85}\u{C608}\u{C758} \u{C804}\u{B2F9}: \u{C6C3}\u{C74C}\u{C774} \u{D130}\u{C9C4} \u{C0DD}\u{C131} \u{CE74}\u{B4DC}\u{B294} \u{C800}\u{C7A5}\u{D574} \u{B450}\u{C5C8}\u{B2E4}\u{AC00} \u{B098}\u{C911}\u{C5D0} \u{C575}\u{CF5C}
+let hof=[];
+function loadHof(){try{hof=JSON.parse(localStorage.getItem('smile-lab-hof')||'[]');for(const h of hof)cards.push(h)}catch(e){}}
+function saveHof(){try{localStorage.setItem('smile-lab-hof',JSON.stringify(hof.slice(-80)))}catch(e){}}
+
+// ---------- \u{AC70}\u{C6B8} \u{D544}\u{D130} \u{C870}\u{D569} (\u{D6A8}\u{ACFC}\u{BCC4} \u{D1B0}\u{C2A8} \u{C0D8}\u{D50C}\u{B9C1}\u{C73C}\u{B85C} \u{C798} \u{BA39}\u{D788}\u{B294} \u{D6A8}\u{ACFC}\u{B97C} \u{D559}\u{C2B5}) ----------
+const FX={googly:{g:'eyes',n:'\u{C655}\u{B208}\u{C54C}'},glasses:{g:'eyes',n:'\u{BD80}\u{C7A5}\u{B2D8} \u{C548}\u{ACBD}'},bigeye:{g:'eyes',n:'\u{CD08}\u{B871}\u{CD08}\u{B871} \u{B208}'},clown:{g:'nose',n:'\u{BE68}\u{AC04} \u{CF54}'},
+ stache:{g:'mouth',n:'\u{CF67}\u{C218}\u{C5FC}'},crown:{g:'head',n:'\u{C655}\u{AD00}'},blush:{g:'cheek',n:'\u{BCFC}\u{D130}\u{CE58}'},long:{g:'shape',n:'\u{AE38}\u{CB49} \u{C5BC}\u{AD74}'},wide:{g:'shape',n:'\u{B0A9}\u{C791} \u{C5BC}\u{AD74}'}};
+const MTITLE=['\u{C6C3}\u{C74C} \u{CC38}\u{AE30} \u{CC4C}\u{B9B0}\u{C9C0}','\u{C624}\u{B298}\u{C758} \u{C99D}\u{BA85}\u{C0AC}\u{C9C4}','\u{D68C}\u{C0AC} \u{CD9C}\u{C785}\u{C99D} \u{C0AC}\u{C9C4}','\u{BD80}\u{CE90} \u{ACF5}\u{AC1C}','\u{D504}\u{B85C}\u{D544} \u{C0AC}\u{C9C4} \u{D6C4}\u{BCF4}','\u{AC70}\u{C6B8}\u{C544} \u{AC70}\u{C6B8}\u{C544}'];
+let fxStats={},lastCombo='';
+function loadFx(){try{fxStats=JSON.parse(localStorage.getItem('smile-lab-fx')||'{}')}catch(e){}}
+function saveFx(){try{localStorage.setItem('smile-lab-fx',JSON.stringify(fxStats))}catch(e){}}
+function randn(){return Math.sqrt(-2*Math.log(Math.random()+1e-9))*Math.cos(2*Math.PI*Math.random())}
+function chooseFx(){
+  for(let tries=0;tries<6;tries++){
+    const samp=Object.keys(FX).map(k=>{const s=fxStats[k]||{n:0,sum:0},m=(1+s.sum)/(2+s.n),sd=Math.sqrt(m*(1-m)/(3+s.n));return [k,m+randn()*sd]}).sort((a,z)=>z[1]-a[1]);
+    const k=1+(Math.random()<0.65)+(Math.random()<0.35),used=new Set(),pickd=[];
+    for(const [f] of samp){if(pickd.length>=k)break;if(used.has(FX[f].g))continue;used.add(FX[f].g);pickd.push(f)}
+    const key=pickd.slice().sort().join('+');if(key!==lastCombo){lastCombo=key;return pickd}
+  }
+  return ['googly'];
+}
+function updateFx(list,r){for(const f of list){const s=fxStats[f]||(fxStats[f]={n:0,sum:0});s.n++;s.sum+=r}saveFx()}
+const SFX=['\u{D391}!','\u{CF85}!','\u{B450}\u{B465}!','\u{BE60}\u{BC24}!','\u{B760}\u{C6A9}!'];
+const SAY={
+ start:['\u{C548}\u{B155}! \u{C624}\u{B298} \u{B108} \u{C6C3}\u{AE30}\u{B7EC} \u{C654}\u{C5B4}. \u{C2DC}\u{C791} \u{B20C}\u{B7EC} \u{BD10}.'],
+ hype:['\u{C774}\u{AC74} \u{C9C4}\u{C9DC} \u{C6C3}\u{AE40} (\u{C544}\u{B9C8}\u{B3C4})','\u{C790} \u{C9D1}\u{C911}\u{2026}','\u{C774}\u{BC88} \u{AC74} \u{C790}\u{C2E0} \u{C788}\u{C74C}','\u{C6C3}\u{C73C}\u{BA74} \u{C9C0}\u{B294} \u{AC70}\u{B2E4}'],
+ great:['\u{BE75} \u{D130}\u{C84C}\u{B2E4}!!','\u{BC30}\u{AF3D} \u{C8FC}\u{C758} \u{1F6A8}','\u{C774}\u{AC74} \u{B808}\u{C804}\u{B4DC} \u{B4F1}\u{ADF9}','\u{C9C0}\u{AE08} \u{D45C}\u{C815} \u{BC15}\u{C81C}\u{D588}\u{C74C}'],
+ good:['\u{314B}\u{314B}\u{314B} \u{C774}\u{AC70}\u{C9C0}!','\u{C6C3}\u{C5C8}\u{B2E4}! \u{AE30}\u{B85D} \u{C644}\u{B8CC}','\u{C624}\u{B298} \u{CEE8}\u{B514}\u{C158} \u{C88B}\u{C740}\u{B370}?','\u{B124} \u{C6C3}\u{C74C} \u{D3EC}\u{C778}\u{D2B8} \u{CC3E}\u{C558}\u{B2E4}'],
+ meh:['\u{D53C}\u{C2DD}\u{C740} \u{C778}\u{C815}?','\u{BC18}\u{CBE4} \u{C131}\u{ACF5}','\u{C624} \u{AC70}\u{C758} \u{B2E4} \u{C654}\u{B2E4}'],
+ bad:['\u{2026}\u{C774}\u{AC74} \u{B0B4}\u{AC00} \u{BD10}\u{B3C4} \u{BCC4}\u{B85C}\u{C600}\u{B2E4}','\u{B2E4}\u{C74C} \u{AC74} \u{C9C4}\u{C9DC} \u{C6C3}\u{AE40}. \u{C9C4}\u{C9DC}\u{B85C}.','\u{BC29}\u{AE08} \u{AC74} \u{C5F0}\u{C2B5}\u{C774}\u{C5C8}\u{C5B4}','\u{D45C}\u{C815} \u{AD00}\u{B9AC} \u{B108}\u{BB34} \u{C798}\u{D558}\u{C2DC}\u{B124}\u{C694}','\u{C774} \u{C720}\u{D615}\u{C740} \u{BE7C} \u{B458}\u{AC8C}'],
+};
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const D=FEAT.length;
+function vec(c){const x=new Array(D).fill(0);x[0]=1;for(const t of c.tags)x[TAGIDX[t]]=1;x[9]=new Date().getHours()>=18?1:0;return x}
+
+// ---------- LinUCB (Sherman\u{2013}Morrison\u{B85C} \u{C5ED}\u{D589}\u{B82C} \u{C9C1}\u{C811} \u{AC31}\u{C2E0}) ----------
+const ALPHA=0.7;
+let Ainv,b,stats,history,lastShown={};
+function fresh(){Ainv=[...Array(D)].map((_,i)=>[...Array(D)].map((_,j)=>i===j?1:0));b=new Array(D).fill(0);stats={};history=[];lastShown={}}
+// \u{BC18}\u{BCF5} \u{BC29}\u{C9C0}: \u{CD5C}\u{ADFC} COOLDOWN\u{C7A5}\u{C740} \u{D6C4}\u{BCF4}\u{C5D0}\u{C11C} \u{C81C}\u{C678}, \u{ADF8} \u{B4A4}\u{C5D0}\u{B3C4} \u{D53C}\u{B85C}\u{B3C4} \u{C810}\u{C218}\u{B97C} \u{C11C}\u{C11C}\u{D788} \u{D68C}\u{BCF5}
+const COOLDOWN=12,FATIGUE=0.5,RECOVER=25;
+function cooldown(){return Math.max(0,Math.min(COOLDOWN,cards.length-4))}
+function since(c){const t=lastShown[c.id];return t==null?Infinity:history.length-t}
+function fatigue(c){const s=since(c);return s===Infinity?0:FATIGUE*Math.exp(-s/RECOVER)}
+const mv=(M,x)=>M.map(r=>r.reduce((s,v,j)=>s+v*x[j],0));
+const dot=(a,c)=>a.reduce((s,v,i)=>s+v*c[i],0);
+function theta(){return mv(Ainv,b)}
+// \u{C6C3}\u{AE30}\u{AE30} \u{C6B0}\u{C120}: \u{B77C}\u{C6B4}\u{B4DC}\u{AC00} \u{C313}\u{C77C}\u{C218}\u{B85D} \u{D0D0}\u{C0C9}\u{C744} \u{C904}\u{C774}\u{ACE0}(\u{C54C}\u{D30C} \u{AC10}\u{C18C}), \u{C2E4}\u{C81C}\u{B85C} \u{D130}\u{C9C4} \u{CE74}\u{B4DC}\u{C640} \u{ADF8} \u{ACB0}\u{C744} \u{BC00}\u{C5B4}\u{C90C}
+let lastCard=null,lastReward=0;
+function alphaNow(){return ALPHA/Math.sqrt(1+history.length/8)}
+function globalAvg(){return history.length?history.reduce((a,c)=>a+c,0)/history.length:0.3}
+function jacc(a,z){const A=new Set(a),Z=new Set(z);let i=0;A.forEach(t=>{if(Z.has(t))i++});return i/(A.size+Z.size-i||1)}
+function score(c,th){const x=vec(c);const mean=dot(th,x);const bonus=alphaNow()*Math.sqrt(Math.max(0,dot(x,mv(Ainv,x))));
+  const nov=lastShown[c.id]==null?0.15/(1+history.length/20):0;              // \u{C548} \u{BCF8} \u{CE74}\u{B4DC} \u{AC00}\u{C0B0}\u{C810}(\u{C810}\u{C810} \u{C904}\u{C5B4}\u{B4E6})
+  const st=stats[c.id];const hit=st?0.6*(st.sum/st.n-globalAvg())*st.n/(st.n+1):0; // \u{C774} \u{CE74}\u{B4DC} \u{C790}\u{CCB4}\u{C758} \u{C2E4}\u{C801}
+  let mom=0;if(lastCard){const j=jacc(c.tags,lastCard.tags);mom=lastReward>=0.5?0.25*j:lastReward<0.15?-0.15*j:0} // \u{D130}\u{C9C0}\u{BA74} \u{AC19}\u{C740} \u{ACB0} \u{ACC4}\u{C18D}, \u{C548} \u{D130}\u{C9C0}\u{BA74} \u{ACB0} \u{BC14}\u{AFB8}\u{AE30}
+  return{mean,bonus,ucb:mean+bonus+nov+hit+mom-fatigue(c)}}
+// \u{C18C}\u{C9C4} \u{ADDC}\u{CE59}: \u{D55C} \u{BC88} \u{BCF8} \u{CE74}\u{B4DC}\u{B294} \u{C740}\u{D1F4}. \u{C6C3}\u{C74C}\u{C774} \u{D130}\u{C84C}\u{B358} \u{CE74}\u{B4DC}\u{B9CC} 40\u{B77C}\u{C6B4}\u{B4DC} \u{B4A4} \u{CD5C}\u{B300} 2\u{BC88} \u{C575}\u{CF5C}. \u{C0DD}\u{C131} \u{CE74}\u{B4DC}\u{B294} \u{AC19}\u{C740} \u{BB38}\u{C7A5} \u{C7AC}\u{B4F1}\u{C7A5} \u{AE08}\u{C9C0}.
+const ENCORE_GAP=40,ENCORE_MAX=2;
+function bestOf(st){return st?(st.best!=null?st.best:st.sum/st.n):0}
+function eligible(c){
+  if(c._skip&&Date.now()-c._skip<60000)return false;
+  if(c.type==='mirror')return since(c)>=5;
+  if(c.gen)return !seenGen.has(c.id);
+  if(lastShown[c.id]==null)return true;
+  const st=stats[c.id];if(bestOf(st)<0.5)return false;
+  return since(c)>=ENCORE_GAP&&st.n-1<ENCORE_MAX;
+}
+let recentSubj=[],recentTpl=[];
+function selectCard(){
+  const th=theta(),cand=cards.filter(eligible).concat(genBatch(12));let best=null,bv=-1e9;
+  for(const c of cand){let s=score(c,th).ucb+Math.random()*0.02;
+    if(c.subj&&recentSubj.includes(c.subj))s-=0.3;if(c.gen&&recentTpl.includes(c.gen))s-=0.2;   // \u{AC19}\u{C740} \u{B3D9}\u{BB3C}\u{B7}\u{AC19}\u{C740} \u{D2C0} \u{C5F0}\u{C18D} \u{BC29}\u{C9C0}
+    if(s>bv){bv=s;best=c}}
+  return best||genCard();
+}
+function update(c,r){
+  const x=vec(c),Ax=mv(Ainv,x),den=1+dot(x,Ax);
+  for(let i=0;i<D;i++)for(let j=0;j<D;j++)Ainv[i][j]-=Ax[i]*Ax[j]/den;
+  for(let i=0;i<D;i++)b[i]+=r*x[i];
+  history.push(r);lastCard=c;lastReward=r;
+  if(c.subj){recentSubj.push(c.subj);recentSubj=recentSubj.slice(-3)}if(c.gen){recentTpl.push(c.gen);recentTpl=recentTpl.slice(-3)}
+  if(c.type==='mirror')updateFx(c.fx,r);
+  if(c.type==='gif')gLearn(c,r);
+  if(c.gen){seenGen.add(c.id);saveGen();
+    if(r>=0.5){const h={id:'h:'+c.id.slice(2),type:'scene',e:c.e,cap:c.cap,tags:c.tags,an:c.an,subj:c.subj};hof.push(h);saveHof();cards.push(h);
+      stats[h.id]={n:1,sum:r,best:r};lastShown[h.id]=history.length}}
+  else if(c.type!=='skit'&&c.type!=='gif'){const s=stats[c.id]||(stats[c.id]={n:0,sum:0});s.n++;s.sum+=r;s.best=Math.max(s.best||0,r);lastShown[c.id]=history.length}
+  save();renderLab();renderG();
+}
+
+// ---------- \u{C6C3}\u{C74C} \u{AE30}\u{B85D} \u{B7} \u{C5F0}\u{CD9C} ----------
+let laughs=0,streakN=0,snapList=[];
+function today(){const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
+function loadLaughs(){try{const d=JSON.parse(localStorage.getItem('smile-lab-laughs')||'null');if(d&&d.date===today())laughs=d.n}catch(e){}}
+function saveLaughs(){try{localStorage.setItem('smile-lab-laughs',JSON.stringify({date:today(),n:laughs}))}catch(e){}}
+function renderScore(pop){const el=$('lCount');el.textContent=laughs;if(pop){el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop')}
+  $('streak').textContent=streakN>=2?`\u{1F525} ${streakN}\u{C5F0}\u{C18D}`:''}
+function celebrate(r,snap){
+  if(r>=0.5){laughs++;streakN++;saveLaughs();renderScore(true);ding();
+    const f=$('flash');const im=$('flashImg');if(snap)im.src=snap;else im.removeAttribute('src');
+    $('flashTxt').textContent=r>=0.85?'\u{BE75} \u{D130}\u{C84C}\u{B2E4}!':'\u{C6C3}\u{C74C} \u{D3EC}\u{CC29}!';f.hidden=false;f.style.animation='none';void f.offsetWidth;f.style.animation='';
+    setTimeout(()=>{f.hidden=true},1600);
+    if(snap){snapList.unshift(snap);snapList=snapList.slice(0,20);$('snaps').innerHTML=snapList.map(s=>`<img src="${s}" alt="\u{C6C3}\u{C740} \u{C21C}\u{AC04}">`).join('')}
+    shake();rain(r>=0.85?22:12);baseMood='grin';say(r>=0.85?'great':'good');
+  }else{streakN=0;renderScore(false);baseMood=r<0.15?'sad':'neutral';say(r<0.15?'bad':'meh')}
+  setMood(baseMood);
+}
+function shake(){const c=$('card');c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake')}
+function rain(n){const card=$('card');for(let i=0;i<n;i++){const e=document.createElement('span');e.className='lolfx';e.textContent=pick(['\u{1F602}','\u{1F923}','\u{314B}','\u{314B}\u{314B}','\u{1F606}']);
+  e.style.left=Math.random()*92+'%';e.style.animationDelay=(Math.random()*0.5)+'s';e.style.fontSize=(22+Math.random()*22)+'px';card.appendChild(e);setTimeout(()=>e.remove(),2300)}}
+// \u{D6A8}\u{ACFC}\u{C74C} (WebAudio\u{B85C} \u{C9C1}\u{C811} \u{D569}\u{C131}, \u{D30C}\u{C77C} \u{BD88}\u{D544}\u{C694})
+let actx=null,soundOn=true;
+function ac(){if(!actx){try{actx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return null}}if(actx.state==='suspended')actx.resume();return actx}
+function tone(f,t0,d,type,g){const a=ac();if(!a)return;const t=a.currentTime+t0,o=a.createOscillator(),v=a.createGain();o.type=type;o.frequency.setValueAtTime(f,t);
+  v.gain.setValueAtTime(g,t);v.gain.exponentialRampToValueAtTime(0.001,t+d);o.connect(v).connect(a.destination);o.start(t);o.stop(t+d+0.02)}
+function hiss(t0,d,g){const a=ac();if(!a)return;const t=a.currentTime+t0,buf=a.createBuffer(1,Math.floor(a.sampleRate*d),a.sampleRate),ch=buf.getChannelData(0);
+  for(let i=0;i<ch.length;i++)ch[i]=Math.random()*2-1;const s=a.createBufferSource(),hp=a.createBiquadFilter(),v=a.createGain();s.buffer=buf;hp.type='highpass';hp.frequency.value=6000;
+  v.gain.setValueAtTime(g,t);v.gain.exponentialRampToValueAtTime(0.001,t+d);s.connect(hp).connect(v).connect(a.destination);s.start(t)}
+function rimshot(){if(!soundOn)return;tone(190,0,0.12,'triangle',0.5);tone(160,0.17,0.12,'triangle',0.5);hiss(0.34,0.7,0.3)}
+function ding(){if(!soundOn)return;tone(880,0,0.18,'sine',0.25);tone(1320,0.1,0.3,'sine',0.25)}
+// \u{AC74}\u{B108}\u{B6F4} \u{B77C}\u{C6B4}\u{B4DC}\u{B3C4} '\u{BCF8} \u{CE74}\u{B4DC}'\u{B85C} \u{AE30}\u{B85D}\u{D574}\u{C11C} \u{BC14}\u{B85C} \u{B2E4}\u{C2DC} \u{B098}\u{C624}\u{C9C0} \u{C54A}\u{AC8C} \u{D568}
+function markSeen(c){c._skip=Date.now()}
+function save(){try{localStorage.setItem('smile-lab-v1',JSON.stringify({Ainv,b,stats,history,lastShown}))}catch(e){}}
+function load(){try{const d=JSON.parse(localStorage.getItem('smile-lab-v1')||'null');if(d&&d.Ainv&&d.Ainv.length===D){({Ainv,b,stats,history}=d);lastShown=d.lastShown||{};return}}catch(e){}fresh()}
+
+// ---------- \u{B0B4} \u{C0AC}\u{C9C4}: \u{CD95}\u{C18C}\u{D574}\u{C11C} \u{C800}\u{C7A5}, \u{AC19}\u{C740} \u{C0AC}\u{C9C4}\u{C740} \u{D55C} \u{BC88}\u{B9CC} ----------
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i+=7){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(36)+s.length}
+function loadPhotos(){try{const arr=JSON.parse(localStorage.getItem('smile-lab-photos')||'[]');for(const p of arr)cards.push({id:p.id,type:'photo',name:p.name,url:p.url,tags:['visual','photo']})}catch(e){}}
+function savePhotos(){try{localStorage.setItem('smile-lab-photos',JSON.stringify(cards.filter(c=>c.type==='photo').map(c=>({id:c.id,name:c.name,url:c.url}))));return true}catch(e){return false}}
+function shrink(file){return new Promise((res,rej)=>{const img=new Image();const u=URL.createObjectURL(file);
+  img.onload=()=>{const k=Math.min(1,480/Math.max(img.width,img.height));const cv=document.createElement('canvas');
+    cv.width=Math.round(img.width*k);cv.height=Math.round(img.height*k);cv.getContext('2d').drawImage(img,0,0,cv.width,cv.height);
+    URL.revokeObjectURL(u);res(cv.toDataURL('image/jpeg',0.72))};img.onerror=()=>{URL.revokeObjectURL(u);rej()};img.src=u})}
+async function addPhotos(files){let added=0,dup=0;
+  for(const f of files){try{const url=await shrink(f);const id='u'+hash(url);
+    if(cards.some(c=>c.id===id)){dup++;continue}cards.push({id,type:'photo',name:f.name,url,tags:['visual','photo']});added++}catch(e){}}
+  const ok=savePhotos();
+  $('poolNote').textContent=`\u{C0AC}\u{C9C4} ${added}\u{C7A5} \u{CD94}\u{AC00}`+(dup?` \u{B7} \u{C911}\u{BCF5} ${dup}\u{C7A5} \u{C81C}\u{C678}`:'')+(ok?'':' \u{B7} \u{C800}\u{C7A5} \u{ACF5}\u{AC04}\u{C774} \u{BD80}\u{C871}\u{D574} \u{C774}\u{BC88} \u{C138}\u{C158}\u{C5D0}\u{B9CC} \u{C720}\u{C9C0}\u{B429}\u{B2C8}\u{B2E4}');
+  renderLab()}
+
+// ---------- \u{D654}\u{BA74} ----------
+const $=id=>document.getElementById(id);
+function cardLabel(c){return c.type==='pun'?c.q+' '+c.a:c.type==='photo'?'\u{B0B4} \u{C0AC}\u{C9C4} '+c.name:c.cap}
+function renderLab(){
+  const n=history.length,avg=n?history.reduce((a,c)=>a+c,0)/n:null,last=history.slice(-5);
+  $('sRounds').textContent=n;
+  const fixed=cards.filter(c=>c.type!=='mirror'),fresh=fixed.filter(c=>lastShown[c.id]==null).length,
+    retired=fixed.filter(c=>lastShown[c.id]!=null&&bestOf(stats[c.id])<0.5).length,enc=fixed.filter(c=>lastShown[c.id]!=null&&bestOf(stats[c.id])>=0.5).length;
+  $('pool').textContent=`\u{C0C8} \u{CE74}\u{B4DC} ${fresh}\u{C7A5} \u{B0A8}\u{C74C} \u{B7} \u{C740}\u{D1F4} ${retired}\u{C7A5} \u{B7} \u{C575}\u{CF5C} \u{D6C4}\u{BCF4} ${enc}\u{C7A5} \u{B7} \u{C0DD}\u{C131}\u{AE30}\u{B85C} \u{BCF8} \u{CE74}\u{B4DC} ${seenGen.size}\u{C7A5}`+(gOn?` \u{B7} \u{BCF8} \u{C6C0}\u{C9E4} ${gSeen.size}\u{AC1C}`:'');
+  $('sAvg').textContent=avg==null?'\u{2013}':avg.toFixed(2);
+  $('sRecent').textContent=last.length?(last.reduce((a,c)=>a+c,0)/last.length).toFixed(2):'\u{2013}';
+  $('hist').innerHTML=history.slice(-24).map(r=>`<i style="height:${Math.max(4,r*100)}%" title="${r.toFixed(2)}"></i>`).join('')||'<span class="small">\u{C544}\u{C9C1} \u{AE30}\u{B85D} \u{C5C6}\u{C74C}</span>';
+  const th=theta(),m=Math.max(.3,...th.map(Math.abs));
+  $('weights').innerHTML=FEAT.map((f,i)=>{const v=th[i],w=Math.abs(v)/m*50;
+    return `<div class="w"><span>${f}</span><div class="track"><div class="fill" style="${v>=0?'left:50%':'right:50%'};width:${w}%;background:var(${v>=0?'--pos':'--neg'})"></div></div><span class="num">${v>=0?'+':''}${v.toFixed(2)}</span></div>`}).join('');
+  const rows=cards.map(c=>({c,s:score(c,th),st:stats[c.id]})).sort((a,z)=>z.s.ucb-a.s.ucb).slice(0,8);
+  $('rank').innerHTML=rows.map(({c,s,st})=>`<tr><td class="t">${esc(cardLabel(c))}</td><td class="n">${st?st.n:0}</td><td class="n">${st?(st.sum/st.n).toFixed(2):'\u{2013}'}</td><td class="n">${s.ucb.toFixed(2)}</td></tr>`).join('');
+}
+function esc(s){return String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]))}
+function showCard(c){
+  mirrorFx=null;$('card').classList.toggle('tall',c.type==='skit');
+  const old=$('content').querySelector('video.gifv');if(old){old.pause();old.removeAttribute('src');old.load()}
+  $('tag').textContent=c.type==='gif'?(c.encore?'\u{C575}\u{CF5C} \u{B7} GIPHY':'GIPHY \u{B7} '+GCAT[c.cat].n):c.type==='skit'?'AI \u{D669}\u{B2F9} \u{C0C1}\u{D669}\u{ADF9}':c.gen?'\u{C0C8}\u{B85C} \u{B9CC}\u{B4E0} \u{CE74}\u{B4DC}':c.id.startsWith('h:')?'\u{C575}\u{CF5C}':c.type==='pun'?(lastShown[c.id]!=null?'\u{C575}\u{CF5C} \u{B7} \u{C544}\u{C7AC}\u{AC1C}\u{ADF8}':'\u{C544}\u{C7AC}\u{AC1C}\u{ADF8}'):c.type==='photo'?'\u{B0B4} \u{C0AC}\u{C9C4}':c.type==='mirror'?'\u{AC70}\u{C6B8}':'\u{C7A5}\u{BA74}';
+  const el=$('content');
+  if(c.type==='gif'){el.innerHTML='';el.appendChild(c.vid);
+    el.insertAdjacentHTML('beforeend',`<a class="gsrc" href="${esc(c.src)}" target="_blank" rel="noopener">GIPHY${c.user?' \u{B7} @'+esc(c.user):''}</a>`)}
+  else if(c.type==='skit'){const sp=[];el.innerHTML=`<div class="skit"><div class="ttl"><span class="em">${esc(c.e)}</span>${esc(c.title)}</div>`+
+    [...c.lines,c.punch].map((l,i,a)=>{if(!sp.includes(l.who))sp.push(l.who);const side=sp.indexOf(l.who)%2?'r':'';
+      return `<div class="ln ${side}${i===a.length-1?' punch':''}"><span class="who">${esc(l.who)}</span><span class="bub">${esc(l.text)}</span></div>`}).join('')+`</div>`}
+  else if(c.type==='pun')el.innerHTML=`<div class="q an-wobble" style="animation-duration:3s">${esc(c.q)}</div><div><div class="a" id="ans">${esc(c.a)}</div></div>`;
+  else if(c.type==='scene')el.innerHTML=`<div><div class="emoji an-${ANIM[c.id]||c.an||'wobble'}">${c.e}</div></div><div class="cap">${esc(c.cap)}</div>`;
+  else if(c.type==='mirror'){const v=$('video');el.innerHTML=`<canvas class="mirror" id="mcv" width="${v.videoWidth||640}" height="${v.videoHeight||480}"></canvas><div class="mcap">${esc(c.cap)}</div>`;
+    pupils.forEach(p=>{p.x=p.y=p.vx=p.vy=0;p.px=null});mirrorFx=new Set(c.fx);requestAnimationFrame(drawMirror)}
+  else el.innerHTML=`<img class="photo" src="${c.url}" alt="\u{C5C5}\u{B85C}\u{B4DC}\u{D55C} \u{C0AC}\u{C9C4}">`;
+  if(c.type!=='mirror'&&Math.random()<0.35)say('hype');
+}
+// ---------- \u{AC70}\u{C6B8} \u{CE74}\u{B4DC}: \u{C5BC}\u{AD74} \u{B79C}\u{B4DC}\u{B9C8}\u{D06C} \u{C704}\u{C5D0} \u{C655}\u{B208}\u{C54C}/\u{BE68}\u{AC04} \u{CF54} ----------
+let mirrorFx=null,lm=null;const pupils=[{},{}].map(()=>({x:0,y:0,vx:0,vy:0,px:null,py:null}));
+function googly(x,cx,cy,R,p){
+  if(p.px==null){p.px=cx;p.py=cy}
+  const dx=cx-p.px,dy=cy-p.py;p.px=cx;p.py=cy;
+  p.vx-=dx*0.9;p.vy-=dy*0.9;p.vy+=R*0.05;p.vx*=0.9;p.vy*=0.9;p.x+=p.vx;p.y+=p.vy;   // \u{AD00}\u{C131} + \u{C911}\u{B825} \u{2192} \u{B208}\u{C54C}\u{C774} \u{B370}\u{AD74}\u{B370}\u{AD74}
+  const lim=R*0.5,d=Math.hypot(p.x,p.y);
+  if(d>lim){const nx=p.x/d,ny=p.y/d;p.x=nx*lim;p.y=ny*lim;const dv=p.vx*nx+p.vy*ny;if(dv>0){p.vx-=1.6*dv*nx;p.vy-=1.6*dv*ny}}
+  x.beginPath();x.arc(cx,cy,R,0,7);x.fillStyle='#FFFFFF';x.fill();x.lineWidth=Math.max(2,R*0.09);x.strokeStyle='#16131F';x.stroke();
+  x.beginPath();x.arc(cx+p.x,cy+p.y,R*0.45,0,7);x.fillStyle='#16131F';x.fill();
+}
+function drawMirror(){
+  const cv=document.getElementById('mcv');if(!mirrorFx||!cv)return;
+  const S=mirrorFx,x=cv.getContext('2d'),W=cv.width,H=cv.height,v=$('video');
+  let cx=W/2,cy=H/2,sx=1,sy=1;if(lm){cx=(1-lm[1].x)*W;cy=lm[1].y*H}
+  if(S.has('long')){sx=0.82;sy=1.32}if(S.has('wide')){sx=1.38;sy=0.8}
+  x.save();x.translate(cx,cy);x.scale(sx,sy);x.translate(-cx,-cy);x.translate(W,0);x.scale(-1,1);x.drawImage(v,0,0,W,H);x.restore();
+  if(lm){
+    const P=i=>({x:cx+((1-lm[i].x)*W-cx)*sx,y:cy+(lm[i].y*H-cy)*sy});
+    const L=P(263),Rr=P(33),ed=Math.hypot(L.x-Rr.x,L.y-Rr.y),ang=Math.atan2(Rr.y-L.y,Rr.x-L.x);
+    const eyes=[[33,133],[362,263]].map(q=>{const a=P(q[0]),b=P(q[1]);return {x:(a.x+b.x)/2,y:(a.y+b.y)/2,w:Math.hypot(a.x-b.x,a.y-b.y)}});
+    if(S.has('bigeye'))eyes.forEach(e=>{const r=e.w*1.1,m=1.9;x.save();x.beginPath();x.arc(e.x,e.y,r,0,7);x.clip();
+      x.drawImage(cv,e.x-r/m,e.y-r/m,2*r/m,2*r/m,e.x-r,e.y-r,2*r,2*r);x.restore()});
+    if(S.has('blush'))[50,280].forEach(i=>{const p=P(i);x.beginPath();x.ellipse(p.x,p.y,ed*0.2,ed*0.13,ang,0,7);x.fillStyle='rgba(255,90,140,.5)';x.fill()});
+    if(S.has('googly'))eyes.forEach((e,k)=>googly(x,e.x,e.y,e.w*0.95,pupils[k]));
+    if(S.has('glasses')){x.lineWidth=Math.max(3,ed*0.07);x.strokeStyle='#16131F';
+      eyes.forEach(e=>{x.beginPath();x.arc(e.x,e.y,e.w*0.85,0,7);x.fillStyle='rgba(140,200,255,.25)';x.fill();x.stroke()});
+      const a=eyes[0],b=eyes[1];x.beginPath();x.moveTo(a.x-(a.x-b.x)*0.25,a.y-(a.y-b.y)*0.25);x.lineTo(b.x+(a.x-b.x)*0.25,b.y+(a.y-b.y)*0.25);x.stroke()}
+    if(S.has('clown')){const n=P(1),r=ed*0.24;
+      x.beginPath();x.arc(n.x,n.y,r,0,7);x.fillStyle='#FF2D3D';x.fill();x.lineWidth=Math.max(2,r*0.12);x.strokeStyle='#16131F';x.stroke();
+      x.beginPath();x.arc(n.x-r*0.35,n.y-r*0.35,r*0.25,0,7);x.fillStyle='rgba(255,255,255,.75)';x.fill()}
+    if(S.has('stache')){const a=P(2),b=P(0),w=ed*0.55;x.save();x.translate((a.x+b.x)/2,(a.y+b.y)/2);x.rotate(ang);x.fillStyle='#16131F';
+      for(const d of[-1,1]){x.beginPath();x.moveTo(0,0);x.bezierCurveTo(d*w*0.3,-w*0.25,d*w*0.8,-w*0.15,d*w,-w*0.32);x.bezierCurveTo(d*w*0.9,w*0.05,d*w*0.4,w*0.22,0,w*0.08);x.fill()}
+      x.restore()}
+    if(S.has('crown')){const t=P(10),w=ed*1.5,h=ed*0.7;x.save();x.translate(t.x,t.y);x.rotate(ang);x.translate(0,-h*0.75);
+      x.beginPath();x.moveTo(-w/2,h/2);x.lineTo(-w/2,-h/2);x.lineTo(-w/4,0);x.lineTo(0,-h/2);x.lineTo(w/4,0);x.lineTo(w/2,-h/2);x.lineTo(w/2,h/2);x.closePath();
+      x.fillStyle='#FFD23F';x.fill();x.lineWidth=Math.max(2,ed*0.05);x.strokeStyle='#16131F';x.stroke();
+      [-w/3,0,w/3].forEach(px=>{x.beginPath();x.arc(px,h*0.18,h*0.1,0,7);x.fillStyle='#FF2D3D';x.fill()});x.restore()}
+  }
+  requestAnimationFrame(drawMirror);
+}
+// ---------- \u{B9C8}\u{C2A4}\u{CF54}\u{D2B8} ----------
+let baseMood='neutral';
+function say(kind){const el=$('say');el.textContent=pick(SAY[kind])}
+function setMood(m){const f=$('face');if(f.dataset.mood!==m)f.dataset.mood=m}
+
+// ---------- \u{CE74}\u{BA54}\u{B77C} + \u{C6C3}\u{C74C} \u{AC10}\u{C9C0} (MediaPipe Face Landmarker) ----------
+let landmarker=null,camOn=false,smileNow=0,faceSeen=false,buf=[];
+const MP='https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14';
+async function startCam(){
+  $('camBtn').disabled=true;$('phase').textContent='\u{CE74}\u{BA54}\u{B77C} \u{C900}\u{BE44} \u{C911}\u{2026}';
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:640,height:480},audio:false});
+    const v=$('video');v.srcObject=stream;await v.play();
+    $('phase').textContent='\u{C5BC}\u{AD74} \u{C778}\u{C2DD} \u{BAA8}\u{B378} \u{BD88}\u{B7EC}\u{C624}\u{B294} \u{C911}\u{2026}';
+    const vision=await import(MP+'/vision_bundle.mjs');
+    const fs=await vision.FilesetResolver.forVisionTasks(MP+'/wasm');
+    const opts=d=>({baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task',delegate:d},outputFaceBlendshapes:true,runningMode:'VIDEO',numFaces:1});
+    try{landmarker=await vision.FaceLandmarker.createFromOptions(fs,opts('GPU'))}catch(e){landmarker=await vision.FaceLandmarker.createFromOptions(fs,opts('CPU'))}
+    camOn=true;if(!cards.some(c=>c.id==='mirror'))cards.push(MIRROR_SLOT);renderLab();$('manual').hidden=true;$('camBtn').textContent='\u{CE74}\u{BA54}\u{B77C} \u{CF1C}\u{C9D0}';
+    $('phase').textContent='\u{CE74}\u{BA54}\u{B77C} \u{CE21}\u{C815} \u{BAA8}\u{B4DC}';$('camNote').textContent='\u{B9C9}\u{B300}\u{AC00} \u{C9C0}\u{AE08} \u{C6C3}\u{C74C} \u{C810}\u{C218}\u{C608}\u{C694}. \u{D55C} \u{BC88} \u{C6C3}\u{C5B4} \u{BCF4}\u{C138}\u{C694}.';
+    loop();
+  }catch(e){
+    camOn=false;$('camBtn').disabled=false;$('manual').hidden=false;
+    $('phase').textContent='\u{CE74}\u{BA54}\u{B77C} \u{AEBC}\u{C9D0} \u{B7} \u{C218}\u{B3D9} \u{D3C9}\u{AC00} \u{BAA8}\u{B4DC}';
+    $('camNote').textContent='\u{CE74}\u{BA54}\u{B77C}\u{B97C} \u{C4F8} \u{C218} \u{C5C6}\u{C5B4}\u{C694} (\u{AD8C}\u{D55C} \u{AC70}\u{BD80} \u{B610}\u{B294} \u{BBF8}\u{B9AC}\u{BCF4}\u{AE30} \u{D658}\u{ACBD}). \u{C774} \u{D30C}\u{C77C}\u{C744} Chrome\u{C5D0}\u{C11C} \u{C9C1}\u{C811} \u{C5F4}\u{BA74} \u{CE74}\u{BA54}\u{B77C}\u{B85C} \u{CE21}\u{C815}\u{D569}\u{B2C8}\u{B2E4}.';
+  }
+}
+let lastT=-1;
+function loop(){
+  const v=$('video');
+  if(v.readyState>=2&&v.currentTime!==lastT){lastT=v.currentTime;
+    const r=landmarker.detectForVideo(v,performance.now());
+    const cat=r.faceBlendshapes&&r.faceBlendshapes[0]&&r.faceBlendshapes[0].categories;
+    if(cat){const g=n=>(cat.find(c=>c.categoryName===n)||{score:0}).score;
+      const sm=0.8*(g('mouthSmileLeft')+g('mouthSmileRight'))/2+0.2*(g('cheekSquintLeft')+g('cheekSquintRight'))/2;
+      const raw=Math.min(1,sm*(1+0.6*g('jawOpen'))); // \u{C6C3}\u{C73C}\u{BA74}\u{C11C} \u{C785}\u{AE4C}\u{C9C0} \u{BC8C}\u{B9AC}\u{BA74}(\u{C18C}\u{B9AC} \u{B0B4} \u{C6C3}\u{C74C}) \u{AC00}\u{C0B0}, \u{C785}\u{B9CC} \u{BC8C}\u{B9B0} \u{AC74} 0
+      buf.push(raw);if(buf.length>5)buf.shift();smileNow=buf.reduce((a,c)=>a+c,0)/buf.length;faceSeen=true}
+    else faceSeen=false;
+    lm=(r.faceLandmarks&&r.faceLandmarks[0])||null;
+    setMood(faceSeen&&smileNow>0.55?'lol':faceSeen&&smileNow>0.25?'grin':baseMood);
+    $('meter').style.width=(faceSeen?smileNow*100:0)+'%';
+  }
+  requestAnimationFrame(loop);
+}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let peakSnap=null;
+function grab(){try{const v=$('video'),cv=document.createElement('canvas');cv.width=160;cv.height=120;const x=cv.getContext('2d');
+  x.translate(160,0);x.scale(-1,1);x.drawImage(v,0,0,160,120);return cv.toDataURL('image/jpeg',0.7)}catch(e){return null}}
+async function sample(ms,mode){const out=[];let best=-1;peakSnap=null;const t0=performance.now();
+  while(performance.now()-t0<ms){if(faceSeen){out.push(smileNow);if(mode==='max'&&smileNow>best+0.03){best=smileNow;peakSnap=grab()}}await sleep(50)}
+  if(!out.length)return null;return mode==='max'?Math.max(...out):out.reduce((a,c)=>a+c,0)/out.length}
+function manualChoice(){return new Promise(res=>{$('manual').hidden=false;
+  const h=e=>{const r=e.currentTarget.dataset.r;['r1','r2','r3'].forEach(id=>$(id).removeEventListener('click',h));res(parseFloat(r))};
+  ['r1','r2','r3'].forEach(id=>$(id).addEventListener('click',h));$('r1').focus()})}
+
+// ---------- \u{D55C} \u{B77C}\u{C6B4}\u{B4DC} ----------
+let running=false,busy=false;
+async function round(){
+  if(busy)return;busy=true;
+  let c=gOn&&Math.random()<0.75?nextGif():null;
+  if(!c)c=(skitQ.length&&Math.random()<0.8)?skitQ.shift():selectCard();
+  if(c.type==='gif')prepGif(c);
+  if(c.type==='mirror'){const fx=chooseFx();c={...c,fx,cap:`${pick(MTITLE)} \u{B7} ${fx.map(f=>FX[f].n).join(' + ')}`}}
+  const cover=$('cover');cover.hidden=false;cover.textContent='\u{BB34}\u{D45C}\u{C815}\u{C73C}\u{B85C} \u{D654}\u{BA74}\u{C744} \u{BD10} \u{C8FC}\u{C138}\u{C694}';
+  $('phase').textContent=camOn?'\u{2460} \u{AE30}\u{C900} \u{D45C}\u{C815} \u{CE21}\u{C815} (1\u{CD08})':'\u{2460} \u{B2E4}\u{C74C} \u{CE74}\u{B4DC} \u{C900}\u{BE44}';
+  let base=camOn?await sample(1000,'mean'):(await sleep(600),0);
+  showCard(c);cover.hidden=true;
+  if(c.type==='gif'){c.vid.play().catch(()=>{});
+    if(!await waitGif(c)){gSeen.add(c.gid);saveG();$('phase').textContent='\u{C6C0}\u{C9E4}\u{C744} \u{BD88}\u{B7EC}\u{C624}\u{C9C0} \u{BABB}\u{D574} \u{AC74}\u{B108}\u{B700}';busy=false;if(running)setTimeout(round,800);return}
+    c.vid.play().catch(()=>{});}
+  if(c.type==='skit'){$('phase').textContent='\u{2461} \u{C0C1}\u{D669}\u{ADF9} \u{C9C4}\u{D589} \u{C911}\u{2026}';await playSkit(c)}
+  if(c.type==='pun'){$('phase').textContent='\u{2461} \u{BB38}\u{C81C} \u{C77D}\u{B294} \u{C911}\u{2026}';await sleep(1800);const a=document.getElementById('ans');if(a)a.classList.add('on');const bm=document.createElement('div');bm.className='boom';bm.textContent=pick(SFX);$('content').appendChild(bm);shake();rimshot()}
+  let r;
+  if(camOn){$('phase').textContent='\u{2462} \u{BC18}\u{C751} \u{CE21}\u{C815} (4\u{CD08})';const peak=await sample(c.type==='gif'?5500:4000,'max');
+    if(peak==null||base==null){if(c.type==='gif'){gSeen.add(c.gid);saveG()}else markSeen(c);$('phase').textContent='\u{C5BC}\u{AD74}\u{C774} \u{C548} \u{BCF4}\u{C5EC}\u{C11C} \u{C774}\u{BC88} \u{B77C}\u{C6B4}\u{B4DC}\u{B294} \u{AC74}\u{B108}\u{B700}';busy=false;if(running)setTimeout(round,1500);return}
+    r=Math.min(1,Math.max(0,(peak-base)/0.45));
+  }else{$('phase').textContent='\u{2462} \u{BC18}\u{C751}\u{C744} \u{ACE8}\u{B77C} \u{C8FC}\u{C138}\u{C694}';r=await manualChoice()}
+  update(c,r);celebrate(r,camOn?peakSnap:null);if(c.type==='skit')logSkit(c,r);else if(aiCool>0){aiCool--;refill()}else refill();
+  $('phase').textContent=`\u{BCF4}\u{C0C1} ${r.toFixed(2)} \u{AE30}\u{B85D} \u{B7} ${camOn?'\u{CE74}\u{BA54}\u{B77C} \u{CE21}\u{C815} \u{BAA8}\u{B4DC}':'\u{C218}\u{B3D9} \u{D3C9}\u{AC00} \u{BAA8}\u{B4DC}'}`;
+  busy=false;
+  if(running)setTimeout(round,camOn?1600:400);
+}
+
+// ---------- AI \u{D669}\u{B2F9} \u{C0C1}\u{D669}\u{ADF9} (\u{C571} \u{C548}\u{C5D0}\u{C11C}\u{B9CC}: Claude\u{AC00} \u{B9E4}\u{BC88} \u{C0C8}\u{B85C} \u{C500}) ----------
+const DEVICES={straight:'\u{BAA8}\u{B450}\u{AC00} \u{C815}\u{C0C9}\u{D558}\u{ACE0} \u{C9C4}\u{C9C0}\u{D558}\u{AC8C} \u{BC1B}\u{C544}\u{B4E4}\u{C784}',escalate:'\u{C0AC}\u{C18C}\u{D55C} \u{C77C}\u{C774} \u{C810}\u{C810} \u{D130}\u{BB34}\u{B2C8}\u{C5C6}\u{C774} \u{CEE4}\u{C9D0}',swap:'\u{C5ED}\u{D560}\u{C774}\u{B098} \u{C785}\u{C7A5}\u{C774} \u{B4A4}\u{BC14}\u{B01C}',
+  object:'\u{C0AC}\u{BB3C}\u{C774}\u{B098} \u{AE30}\u{ACC4}\u{AC00} \u{B9D0}\u{C744} \u{D568}',rule:'\u{B9D0}\u{B3C4} \u{C548} \u{B418}\u{B294} \u{ADDC}\u{CE59}\u{C774}\u{B098} \u{C815}\u{CC45}',bureau:'\u{D669}\u{B2F9}\u{D55C} \u{C11C}\u{B958}\u{B7}\u{C808}\u{CC28}\u{B7}\u{AD00}\u{B8CC}\u{C8FC}\u{C758}',literal:'\u{B9D0}\u{C744} \u{ACE7}\u{C774}\u{ACE7}\u{B300}\u{B85C} \u{D574}\u{C11D}\u{D568}'};
+const SETTINGS=['\u{D3B8}\u{C758}\u{C810} \u{ACC4}\u{C0B0}\u{B300}','\u{D68C}\u{C0AC} \u{D68C}\u{C758}\u{C2E4}','\u{BA74}\u{C811}\u{C7A5}','\u{BCD1}\u{C6D0} \u{C9C4}\u{B8CC}\u{C2E4}','\u{BBF8}\u{C6A9}\u{C2E4}','\u{CD9C}\u{ADFC}\u{AE38} \u{C9C0}\u{D558}\u{CCA0}','\u{C5D8}\u{B9AC}\u{BCA0}\u{C774}\u{D130} \u{C548}','\u{C740}\u{D589} \u{CC3D}\u{AD6C}','\u{ACE0}\u{AC1D}\u{C13C}\u{D130} \u{C804}\u{D654}','\u{D559}\u{AD50} \u{AD50}\u{BB34}\u{C2E4}',
+  '\u{B3D9}\u{B124} \u{CE58}\u{D0A8}\u{C9D1}','\u{D5EC}\u{C2A4}\u{C7A5}','\u{ACB0}\u{D63C}\u{C2DD}\u{C7A5}','\u{C6B0}\u{C8FC}\u{C815}\u{AC70}\u{C7A5}','\u{B9C8}\u{D2B8} \u{C2DC}\u{C2DD} \u{CF54}\u{B108}','\u{BD80}\u{B3D9}\u{C0B0} \u{C0AC}\u{BB34}\u{C2E4}','\u{D0DD}\u{C2DC} \u{B4B7}\u{C88C}\u{C11D}','\u{B3D9}\u{C0AC}\u{BB34}\u{C18C}'];
+let ai=null,aiOff=false,aiBusy=false,aiCool=0,skitQ=[],skitLog=[],devStats={};
+function loadAI(){try{skitLog=JSON.parse(localStorage.getItem('smile-lab-skits')||'[]');devStats=JSON.parse(localStorage.getItem('smile-lab-dev')||'{}')}catch(e){}}
+function saveAI(){try{localStorage.setItem('smile-lab-skits',JSON.stringify(skitLog.slice(-60)));localStorage.setItem('smile-lab-dev',JSON.stringify(devStats))}catch(e){}}
+function aiNote(t){const n=$('aiNote');n.hidden=!t;n.textContent=t||''}
+async function aiInit(){
+  if(ai||aiOff||!window.claude||!window.claude.use)return;
+  try{ai=await window.claude.use('sample')}catch(e){ai=null}
+  if(!ai){aiOff=true;return}
+  aiNote('AI\u{AC00} \u{B2F9}\u{C2E0}\u{C744} \u{C704}\u{D55C} \u{D669}\u{B2F9} \u{C0C1}\u{D669}\u{ADF9}\u{C744} \u{C4F0}\u{B294} \u{C911}\u{2026} (\u{CCAB} \u{D3B8}\u{C740} \u{C870}\u{AE08} \u{AC78}\u{B824}\u{C694})');refill();
+}
+function pickDevices(n){return Object.keys(DEVICES).map(k=>{const s=devStats[k]||{n:0,sum:0},m=(1+s.sum)/(2+s.n),sd=Math.sqrt(m*(1-m)/(3+s.n));return [k,m+randn()*sd]})
+  .sort((a,z)=>z[1]-a[1]).slice(0,n).map(x=>x[0])}
+function skitText(k){return [...k.lines,k.punch].map(l=>`${l.who}: ${l.text}`).join(' / ')}
+async function refill(){
+  if(!ai||aiOff||aiBusy||skitQ.length>=2||aiCool>0)return;aiBusy=true;
+  const devs=pickDevices(3),sets=[...SETTINGS].sort(()=>Math.random()-.5).slice(0,3);
+  const liked=skitLog.filter(k=>k.r>=0.5).slice(-4).map(skitText),disliked=skitLog.filter(k=>k.r<0.2).slice(-3).map(skitText);
+  const used=skitLog.slice(-30).map(k=>k.punch.text);
+  const prompt=`\u{B108}\u{B294} \u{D55C}\u{AD6D}\u{C5B4} \u{CF69}\u{D2B8} \u{C791}\u{AC00}\u{B2E4}. '\u{D669}\u{B2F9}\u{D55C} \u{C0C1}\u{D669}\u{ADF9}' \u{C9E7}\u{C740} \u{CF69}\u{D2B8} 3\u{D3B8}\u{C744} \u{C368}\u{B77C}.
+\u{AC01} \u{CF69}\u{D2B8}\u{C758} \u{C7A5}\u{C18C}\u{C640} \u{C6C3}\u{C74C} \u{C7A5}\u{CE58}:
+${devs.map((d,i)=>`${i+1}. \u{C7A5}\u{C18C}: ${sets[i]} / \u{C6C3}\u{C74C} \u{C7A5}\u{CE58}: ${DEVICES[d]} (device \u{AC12}: "${d}")`).join('\n')}
+
+\u{ADDC}\u{CE59}:
+- \u{B300}\u{C0AC} 2~4\u{C904}, \u{ADF8}\u{B2E4}\u{C74C} \u{B9C8}\u{C9C0}\u{B9C9} \u{D380}\u{CE58}\u{B77C}\u{C778} \u{D55C} \u{C904}. \u{D55C} \u{C904}\u{C740} 40\u{C790} \u{C774}\u{B0B4}, \u{C804}\u{CCB4} 160\u{C790} \u{C774}\u{B0B4}.
+- \u{B4F1}\u{C7A5}\u{C778}\u{BB3C}\u{C740} '\u{C190}\u{B2D8}', '\u{C9C1}\u{C6D0}', '\u{BD80}\u{C7A5}', '\u{B098}', '\u{C758}\u{C0AC}', '\u{C5C4}\u{B9C8}' \u{AC19}\u{C740} \u{C77C}\u{BC18} \u{D638}\u{CE6D}\u{B9CC}. \u{C2E4}\u{C874} \u{C778}\u{BB3C}\u{B7}\u{BE0C}\u{B79C}\u{B4DC}\u{B7}\u{C5F0}\u{C608}\u{C778} \u{AE08}\u{C9C0}.
+- \u{BED4}\u{D55C} \u{C544}\u{C7AC}\u{AC1C}\u{ADF8}\u{B7}\u{B9D0}\u{C7A5}\u{B09C} \u{AE08}\u{C9C0}. \u{B9D0}\u{B3C4} \u{C548} \u{B418}\u{B294} \u{C77C}\u{C744} \u{BAA8}\u{B450}\u{AC00} \u{B108}\u{BB34} \u{C9C4}\u{C9C0}\u{D558}\u{AC8C} \u{CC98}\u{B9AC}\u{D558}\u{B294} \u{B370}\u{C11C} \u{C6C3}\u{C74C}\u{C774} \u{B098}\u{C640}\u{C57C} \u{D55C}\u{B2E4}.
+- \u{D380}\u{CE58}\u{B77C}\u{C778}\u{C740} \u{C608}\u{C0C1}\u{C744} \u{D55C} \u{BC88} \u{B354} \u{BE44}\u{D2B8}\u{B294} \u{BC18}\u{C804}. \u{C124}\u{BA85}\u{D558}\u{C9C0} \u{B9D0} \u{AC83}.
+- \u{BE44}\u{D558}\u{B7}\u{D610}\u{C624}\u{B7}\u{C120}\u{C815}\u{B7}\u{D3ED}\u{B825}\u{B7}\u{C815}\u{CE58} \u{C18C}\u{C7AC} \u{AE08}\u{C9C0}.
+${liked.length?`\n\u{C774} \u{C0AC}\u{B78C}\u{C774} \u{D06C}\u{AC8C} \u{C6C3}\u{C740} \u{CF69}\u{D2B8} (\u{C774}\u{B7F0} \u{ACB0}\u{C744} \u{B354}):\n${liked.map(t=>'- '+t).join('\n')}\n`:''}${disliked.length?`\n\u{C774} \u{C0AC}\u{B78C}\u{C774} \u{C548} \u{C6C3}\u{C740} \u{CF69}\u{D2B8} (\u{C774}\u{B7F0} \u{ACB0}\u{C740} \u{D53C}\u{D558}\u{AE30}):\n${disliked.map(t=>'- '+t).join('\n')}\n`:''}${used.length?`\n\u{C774}\u{BBF8} \u{C4F4} \u{D380}\u{CE58}\u{B77C}\u{C778} (\u{BC18}\u{BCF5} \u{AE08}\u{C9C0}): ${used.join(' | ')}\n`:''}
+JSON \u{BC30}\u{C5F4}\u{B9CC} \u{CD9C}\u{B825}. \u{D615}\u{C2DD}:
+[{"device":"straight","setting":"\u{D3B8}\u{C758}\u{C810} \u{ACC4}\u{C0B0}\u{B300}","emoji":"\u{1F3EA}","title":"\u{C9E7}\u{C740} \u{C81C}\u{BAA9}","lines":[{"who":"\u{C190}\u{B2D8}","text":"..."},{"who":"\u{C9C1}\u{C6D0}","text":"..."}],"punch":{"who":"\u{C9C1}\u{C6D0}","text":"..."}}]`;
+  try{
+    const arr=await ai.json(prompt,{cache:false});
+    const ok=(Array.isArray(arr)?arr:[]).filter(k=>k&&Array.isArray(k.lines)&&k.lines.length&&k.punch&&k.punch.text);
+    for(const k of ok){const dev=DEVICES[k.device]?k.device:devs[0];const off=/\u{D68C}\u{C0AC}|\u{BA74}\u{C811}|\u{ACE0}\u{AC1D}\u{C13C}\u{D130}|\u{C740}\u{D589}|\u{B3D9}\u{C0AC}\u{BB34}\u{C18C}|\u{BD80}\u{B3D9}\u{C0B0}/.test(k.setting||'');
+      skitQ.push({id:'ai:'+Date.now()+Math.random(),type:'skit',dev,setting:String(k.setting||''),e:String(k.emoji||'\u{1F3AD}').slice(0,6),title:String(k.title||'\u{D669}\u{B2F9} \u{C0C1}\u{D669}\u{ADF9}'),
+        lines:k.lines.slice(0,4).map(l=>({who:String(l.who||'?').slice(0,8),text:String(l.text||'')})),punch:{who:String(k.punch.who||'?').slice(0,8),text:String(k.punch.text)},
+        tags:['twist',off?'office':'daily']})}
+    aiNote(skitQ.length?`AI \u{C0C1}\u{D669}\u{ADF9} ${skitQ.length}\u{D3B8} \u{B300}\u{AE30} \u{C911}`:'AI\u{AC00} \u{C774}\u{BC88}\u{C5D4} \u{C4F8} \u{B9CC}\u{D55C} \u{CF69}\u{D2B8}\u{B97C} \u{BABB} \u{B9CC}\u{B4E4}\u{C5C8}\u{C5B4}\u{C694}. \u{B2E4}\u{C74C} \u{B77C}\u{C6B4}\u{B4DC}\u{C5D0} \u{B2E4}\u{C2DC} \u{C2DC}\u{B3C4}\u{D569}\u{B2C8}\u{B2E4}.');
+  }catch(e){
+    const code=e&&e.code;
+    if(['not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed','session_expired'].includes(code)){aiOff=true;aiNote('AI \u{C0C1}\u{D669}\u{ADF9}\u{C744} \u{C4F8} \u{C218} \u{C5C6}\u{C5B4} \u{AE30}\u{BCF8} \u{CE74}\u{B4DC}\u{B85C} \u{C9C4}\u{D589}\u{D569}\u{B2C8}\u{B2E4}.')}
+    else if(code==='rate_limited'){aiCool=6;aiNote('AI \u{C0AC}\u{C6A9}\u{B7C9}\u{C774} \u{C7A0}\u{C2DC} \u{AF49} \u{CC3C}\u{C5B4}\u{C694}. \u{BA87} \u{B77C}\u{C6B4}\u{B4DC} \u{B4A4}\u{C5D0} \u{B2E4}\u{C2DC} \u{C368} \u{BCFC}\u{AC8C}\u{C694}.')}
+    else if(code!=='cancelled'){aiCool=1;aiNote('AI \u{C0C1}\u{D669}\u{ADF9}\u{C744} \u{BC1B}\u{C544} \u{C624}\u{C9C0} \u{BABB}\u{D588}\u{C5B4}\u{C694}. \u{B2E4}\u{C74C} \u{B77C}\u{C6B4}\u{B4DC}\u{C5D0} \u{B2E4}\u{C2DC} \u{C2DC}\u{B3C4}\u{D569}\u{B2C8}\u{B2E4}.')}
+  }finally{aiBusy=false}
+}
+async function playSkit(c){
+  const lines=[...$('content').querySelectorAll('.ln')];
+  for(const ln of lines){
+    if(ln.classList.contains('punch')){await sleep(500);ln.classList.add('on');const bm=document.createElement('div');bm.className='boom';bm.textContent=pick(SFX);$('content').appendChild(bm);shake();rimshot();break}
+    ln.classList.add('on');await sleep(Math.min(2600,900+ln.textContent.length*55));
+  }
+}
+function logSkit(c,r){skitLog.push({title:c.title,lines:c.lines,punch:c.punch,dev:c.dev,r});const s=devStats[c.dev]||(devStats[c.dev]={n:0,sum:0});s.n++;s.sum+=r;saveAI();
+  if(aiCool>0)aiCool--;refill();if(!aiOff&&ai)aiNote(skitQ.length?`AI \u{C0C1}\u{D669}\u{ADF9} ${skitQ.length}\u{D3B8} \u{B300}\u{AE30} \u{C911}`:'\u{B2E4}\u{C74C} \u{C0C1}\u{D669}\u{ADF9} \u{C4F0}\u{B294} \u{C911}\u{2026}')}
+
+// ---------- GIPHY \u{C6C0}\u{C9E4} (tiiny \u{B4F1} \u{C77C}\u{BC18} \u{BE0C}\u{B77C}\u{C6B0}\u{C800}\u{C5D0}\u{C11C}\u{B9CC} \u{B3D9}\u{C791}) ----------
+const GCAT={
+ animalfail:{n:'\u{B3D9}\u{BB3C} \u{C2E4}\u{C218}',q:['animal fail','cat fail','dog fail','funny animals']},
+ cat:{n:'\u{ACE0}\u{C591}\u{C774}',q:['funny cat','cat derp','silly cat','cat zoomies']},
+ dog:{n:'\u{AC15}\u{C544}\u{C9C0}',q:['funny dog','dog derp','silly dog','dog zoomies']},
+ baby:{n:'\u{C544}\u{AE30}',q:['funny baby','baby laughing','toddler funny']},
+ fail:{n:'\u{B118}\u{C5B4}\u{C9D0}\u{B7}\u{C2E4}\u{C218}',q:['fail','epic fail','slip and fall','oops']},
+ face:{n:'\u{D45C}\u{C815}\u{B7}\u{B9AC}\u{C561}\u{C158}',q:['funny face','confused face','side eye','shocked face']},
+ dance:{n:'\u{B9C9}\u{CDA4}',q:['funny dance','dance fail','awkward dance']},
+ sport:{n:'\u{C6B4}\u{B3D9} \u{C2E4}\u{D328}',q:['sports fail','gym fail','funny sports']},
+ weird:{n:'\u{C774}\u{C0C1}\u{D55C} \u{B3D9}\u{BB3C}',q:['goat scream','funny bird','weird animal','funny duck']},
+ life:{n:'\u{C77C}\u{C0C1} \u{C2E4}\u{D328}',q:['cooking fail','kitchen fail','life fail','door fail']},
+};
+let gKey='',gOn=false,gStats={},gSeen=new Set(),gQ={},gOff={},gBusy=false,gCool=0,gHof=[];
+const inViewer=!!window.claude;
+function gStatus(t){$('gStatus').textContent=t}
+function gUI(){$('gIn').hidden=gOn;$('gOut').hidden=!gOn;$('gClear').hidden=gOn&&gKey===DEFAULT_GKEY}
+function loadG(){try{gKey=localStorage.getItem('smile-lab-gkey')||'';gStats=JSON.parse(localStorage.getItem('smile-lab-gstats')||'{}');
+  gSeen=new Set(JSON.parse(localStorage.getItem('smile-lab-gseen')||'[]'));gOff=JSON.parse(localStorage.getItem('smile-lab-goff')||'{}');
+  gHof=JSON.parse(localStorage.getItem('smile-lab-ghof')||'[]')}catch(e){}}
+function saveG(){try{localStorage.setItem('smile-lab-gstats',JSON.stringify(gStats));localStorage.setItem('smile-lab-gseen',JSON.stringify([...gSeen].slice(-4000)));
+  localStorage.setItem('smile-lab-goff',JSON.stringify(gOff));localStorage.setItem('smile-lab-ghof',JSON.stringify(gHof.slice(-60)))}catch(e){}}
+function gRank(){return Object.keys(GCAT).map(k=>{const s=gStats[k]||{n:0,sum:0},m=(1+s.sum)/(2+s.n),sd=Math.sqrt(m*(1-m)/(3+s.n));return [k,m+randn()*sd]})
+  .sort((a,z)=>z[1]-a[1]).map(x=>x[0])}
+async function gFetch(cat){
+  const q=pick(GCAT[cat].q),off=gOff[q]||0;
+  const u=`https://api.giphy.com/v1/gifs/search?api_key=${encodeURIComponent(gKey)}&q=${encodeURIComponent(q)}&limit=25&offset=${off}&rating=pg&lang=en`;
+  let res;try{res=await fetch(u)}catch(e){throw {code:'net'}}
+  if(res.status===401||res.status===403)throw {code:'key'};
+  if(res.status===429)throw {code:'rate'};
+  if(!res.ok)throw {code:'http'};
+  const j=await res.json(),data=(j&&j.data)||[],total=(j.pagination&&j.pagination.total_count)||500;
+  gOff[q]=off+25>=Math.min(total,1000)?0:off+25;
+  const arr=gQ[cat]||(gQ[cat]=[]);let n=0;
+  for(const d of data){const im=d.images||{};const mp4=(im.original&&im.original.mp4)||(im.fixed_height&&im.fixed_height.mp4);
+    if(!mp4||gSeen.has(d.id)||arr.some(x=>x.gid===d.id))continue;
+    arr.push({id:'gif:'+d.id,gid:d.id,type:'gif',cat,mp4,src:d.url||'https://giphy.com',user:d.username||'',tags:['visual']});n++}
+  arr.sort(()=>Math.random()-.5);saveG();return n;
+}
+function gHandleErr(e){const c=e&&e.code;
+  if(c==='key'){gOn=false;gUI();gStatus(gKey===DEFAULT_GKEY?'\u{ACF5}\u{C6A9} \u{C6C0}\u{C9E4} \u{D0A4}\u{AC00} \u{B9C9}\u{D614}\u{C5B4}\u{C694}. \u{B0B4} Giphy \u{D0A4}\u{AC00} \u{C788}\u{C73C}\u{BA74} \u{B123}\u{C5B4} \u{C8FC}\u{C138}\u{C694}. \u{ADF8}\u{B3D9}\u{C548} \u{B2E4}\u{B978} \u{CE74}\u{B4DC}\u{AC00} \u{B098}\u{C640}\u{C694}.':'\u{D0A4}\u{AC00} \u{B9DE}\u{C9C0} \u{C54A}\u{C544}\u{C694}. Giphy \u{B300}\u{C2DC}\u{BCF4}\u{B4DC}\u{C5D0}\u{C11C} \u{D0A4}\u{B97C} \u{B2E4}\u{C2DC} \u{BCF5}\u{C0AC}\u{D574} \u{C8FC}\u{C138}\u{C694}.')}
+  else if(c==='rate'){gCool=Date.now()+10*60000;gStatus('\u{C2DC}\u{AC04}\u{B2F9} \u{C0AC}\u{C6A9} \u{D55C}\u{B3C4}\u{C5D0} \u{AC78}\u{B838}\u{C5B4}\u{C694}. 10\u{BD84} \u{B4A4} \u{B2E4}\u{C2DC} \u{AC00}\u{C838}\u{C62C}\u{AC8C}\u{C694}. \u{ADF8}\u{B3D9}\u{C548} \u{B2E4}\u{B978} \u{CE74}\u{B4DC}\u{AC00} \u{B098}\u{C640}\u{C694}.')}
+  else if(c==='net')gStatus('\u{C6C0}\u{C9E4}\u{C744} \u{BC1B}\u{C544} \u{C624}\u{C9C0} \u{BABB}\u{D588}\u{C5B4}\u{C694}. \u{C778}\u{D130}\u{B137} \u{C5F0}\u{ACB0}\u{C744} \u{D655}\u{C778}\u{D574} \u{C8FC}\u{C138}\u{C694}.');
+  else gStatus('Giphy \u{C751}\u{B2F5}\u{C5D0} \u{BB38}\u{C81C}\u{AC00} \u{C788}\u{C5B4}\u{C694}. \u{C7A0}\u{C2DC} \u{B4A4} \u{B2E4}\u{C2DC} \u{C2DC}\u{B3C4}\u{D569}\u{B2C8}\u{B2E4}.')}
+async function gEnsure(cats){
+  if(!gOn||gBusy||Date.now()<gCool)return;
+  const need=(cats||gRank().slice(0,2)).filter(k=>!(gQ[k]&&gQ[k].length>=3));if(!need.length)return;
+  gBusy=true;try{for(const k of need.slice(0,2))await gFetch(k);gStatus(`\u{C5F0}\u{ACB0}\u{B428} \u{B7} \u{C6C0}\u{C9E4} ${Object.values(gQ).reduce((a,q)=>a+q.length,0)}\u{AC1C} \u{B300}\u{AE30} \u{B7} \u{BCF8} \u{C6C0}\u{C9E4} ${gSeen.size}\u{AC1C}`)}
+  catch(e){gHandleErr(e)}finally{gBusy=false}
+}
+function nextGif(){
+  const order=gRank();
+  if(lastCard&&lastCard.type==='gif'&&lastReward>=0.5&&Math.random()<0.5){const k=lastCard.cat;order.splice(order.indexOf(k),1);order.unshift(k)} // \u{D130}\u{C9C4} \u{C885}\u{B958} \u{C774}\u{C5B4} \u{AC00}\u{AE30}
+  if(Math.random()<0.1){const h=gHof.find(x=>history.length-x.at>=40&&x.n<2);if(h){h.n++;h.at=history.length;saveG();return {...h,id:'gif:'+h.gid,type:'gif',encore:true,tags:['visual']}}}
+  gEnsure(order.slice(0,2));
+  for(const k of order){const q=gQ[k];while(q&&q.length){const c=q.shift();if(!gSeen.has(c.gid))return c}}
+  return null;
+}
+function gLearn(c,r){gSeen.add(c.gid);const s=gStats[c.cat]||(gStats[c.cat]={n:0,sum:0});s.n++;s.sum+=r;
+  if(r>=0.5&&!c.encore&&!gHof.some(h=>h.gid===c.gid))gHof.push({gid:c.gid,cat:c.cat,mp4:c.mp4,src:c.src,user:c.user,at:history.length,n:0});saveG();gEnsure()}
+function prepGif(c){const v=document.createElement('video');v.className='gifv';v.src=c.mp4;v.muted=true;v.loop=true;v.playsInline=true;v.setAttribute('playsinline','');v.preload='auto';v.load();c.vid=v}
+function waitGif(c){return new Promise(res=>{const v=c.vid;if(v.readyState>=3)return res(true);const t=setTimeout(()=>res(v.readyState>=2),5000);
+  v.addEventListener('canplay',()=>{clearTimeout(t);res(true)},{once:true});v.addEventListener('error',()=>{clearTimeout(t);res(false)},{once:true})})}
+async function gConnect(){
+  const k=$('gKeyIn').value.trim();if(!k){gStatus('\u{D0A4}\u{B97C} \u{BD99}\u{C5EC} \u{B123}\u{C5B4} \u{C8FC}\u{C138}\u{C694}.');return}
+  gKey=k;gStatus('\u{C5F0}\u{ACB0} \u{D655}\u{C778} \u{C911}\u{2026}');$('gSave').disabled=true;
+  try{const n=await gFetch(gRank()[0]);gOn=true;try{localStorage.setItem('smile-lab-gkey',k)}catch(e){}gUI();$('gKeyIn').value='';
+    gStatus(`\u{C5F0}\u{ACB0}\u{B428} \u{B7} \u{C6C0}\u{C9E4} ${n}\u{AC1C} \u{C900}\u{BE44} \u{C644}\u{B8CC}. \u{C2DC}\u{C791}\u{C744} \u{B204}\u{B974}\u{C138}\u{C694}.`);gEnsure()}
+  catch(e){gOn=false;gHandleErr(e)}finally{$('gSave').disabled=false}
+}
+const DEFAULT_GKEY=window.SMILE_GKEY||'',DIST=!!window.SMILE_DIST;
+function gInit(){
+  if(inViewer){$('gIn').hidden=true;$('gOut').hidden=true;gStatus('\u{C6C0}\u{C9E4}\u{C740} tiiny \u{B9C1}\u{D06C}(\u{D3F0} Chrome\u{B7}Safari)\u{C5D0}\u{C11C}\u{B9CC} \u{C791}\u{B3D9}\u{D574}\u{C694}. \u{C774} \u{D654}\u{BA74}\u{C5D0}\u{C11C}\u{B294} \u{BCF4}\u{C548} \u{C815}\u{CC45}\u{C0C1} \u{B9C9}\u{D600} \u{C788}\u{C5B4}\u{C694}.');return}
+  loadG();if(!gKey&&DEFAULT_GKEY){gKey=DEFAULT_GKEY}
+  if(gKey){gOn=true;gUI();gStatus('\u{C5F0}\u{ACB0}\u{B428} \u{B7} \u{C6C0}\u{C9E4} \u{BD88}\u{B7EC}\u{C624}\u{B294} \u{C911}\u{2026}');gEnsure()}else gUI();
+}
+function renderG(){const el=$('gcats');if(!el||!gOn)return;
+  const rows=Object.keys(GCAT).map(k=>{const s=gStats[k]||{n:0,sum:0};return {k,n:s.n,m:s.n?s.sum/s.n:null}}).sort((a,z)=>(z.m??-1)-(a.m??-1));
+  el.innerHTML=rows.map(({k,n,m})=>`<div class="w"><span>${GCAT[k].n}</span><div class="track"><div class="fill" style="left:0;width:${m==null?0:m*100}%;background:var(--pos)"></div></div><span class="num">${m==null?'\u{2013}':m.toFixed(2)} \u{B7} ${n}</span></div>`).join('')}
+
+// ---------- \u{C774}\u{BCA4}\u{D2B8} ----------
+$('soundBtn').addEventListener('click',e=>{soundOn=!soundOn;e.currentTarget.textContent=soundOn?'\u{D6A8}\u{ACFC}\u{C74C} \u{CF1C}\u{C9D0}':'\u{D6A8}\u{ACFC}\u{C74C} \u{AEBC}\u{C9D0}';e.currentTarget.setAttribute('aria-pressed',soundOn);if(soundOn)ac()});
+$('startBtn').addEventListener('click',()=>{if(soundOn)ac();aiInit();running=!running;$('startBtn').textContent=running?'\u{C77C}\u{C2DC}\u{C815}\u{C9C0}':'\u{C2DC}\u{C791}';if(running)round()});
+$('camBtn').addEventListener('click',startCam);
+$('resetBtn').addEventListener('click',()=>{fresh();gStats={};saveG();renderG();seenGen=new Set();saveGen();fxStats={};saveFx();save();renderLab()});
+$('upload').addEventListener('change',e=>{const fs=[...e.target.files];e.target.value='';addPhotos(fs)});
+
+$('gSave').addEventListener('click',gConnect);
+$('gKeyIn').addEventListener('keydown',e=>{if(e.key==='Enter')gConnect()});
+$('gClear').addEventListener('click',()=>{try{localStorage.removeItem('smile-lab-gkey')}catch(e){}gQ={};if(DEFAULT_GKEY){gKey=DEFAULT_GKEY;gOn=true;gUI();gStatus('\u{B0B4} \u{D0A4}\u{B97C} \u{D574}\u{C81C}\u{D558}\u{ACE0} \u{ACF5}\u{C6A9} \u{D0A4}\u{B85C} \u{B3CC}\u{C544}\u{C654}\u{C5B4}\u{C694}.');gEnsure();return}gOn=false;gKey='';gQ={};try{localStorage.removeItem('smile-lab-gkey')}catch(e){}gUI();gStatus('\u{D0A4}\u{B97C} \u{D574}\u{C81C}\u{D588}\u{C5B4}\u{C694}.')});
+gInit();
+(function distSetup(){
+  const ua=navigator.userAgent||'';
+  if(/KAKAOTALK/i.test(ua)){$('inapp').hidden=false;$('inappBtn').onclick=()=>{location.href='kakaotalk://web/openExternal?url='+encodeURIComponent(location.href)}}
+  else if(/Instagram|FBAN|FBAV|NAVER|Line\//i.test(ua)){$('inapp').hidden=false;$('inappTxt').textContent='\u{C571} \u{C548}\u{C758} \u{BE0C}\u{B77C}\u{C6B0}\u{C800}\u{C5D0}\u{C11C}\u{B294} \u{CE74}\u{BA54}\u{B77C}\u{AC00} \u{C548} \u{B420} \u{C218} \u{C788}\u{C5B4}\u{C694}. \u{C624}\u{B978}\u{CABD} \u{C704} \u{22EF} \u{BA54}\u{B274}\u{C5D0}\u{C11C} "\u{BE0C}\u{B77C}\u{C6B0}\u{C800}\u{B85C} \u{C5F4}\u{AE30}"\u{B97C} \u{B20C}\u{B7EC} \u{C8FC}\u{C138}\u{C694}.';$('inappBtn').hidden=true}
+  if(!DIST)return;
+  let seen=false;try{seen=localStorage.getItem('smile-lab-intro')==='1'}catch(e){}
+  if(seen)return;
+  $('intro').hidden=false;
+  const go=async cam=>{try{localStorage.setItem('smile-lab-intro','1')}catch(e){}$('intro').hidden=true;
+    if(soundOn)ac();if(cam)await startCam();else $('manual').hidden=false;
+    if(!running){running=true;$('startBtn').textContent='\u{C77C}\u{C2DC}\u{C815}\u{C9C0}';round()}};
+  $('introGo').onclick=()=>go(true);$('introNoCam').onclick=()=>go(false);
+})();
+load();loadAI();loadPhotos();loadGen();loadHof();loadFx();loadLaughs();renderScore(false);renderLab();renderG();
+try{if(matchMedia('(min-width:821px)').matches)$('labBox').open=true}catch(e){}
+</script>
+
+</body>
+</html>
